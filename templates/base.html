@@ -18,8 +18,7 @@
   <!-- Apply saved dark mode before paint to avoid flash -->
   <script>
     (function () {
-      var t = localStorage.getItem('theme');
-      if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      if (localStorage.getItem('theme') === 'dark') {
         document.documentElement.classList.add('dark');
       }
     })();
@@ -77,12 +76,12 @@
        ===================================================== -->
   <header class="sticky top-0 z-50 bg-white dark:bg-gray-900
                  border-b border-gray-200 dark:border-gray-800 shadow-sm">
-    <div class="container-main flex items-center justify-between h-16 gap-6">
+    <div class="container-main flex items-center justify-between h-28 gap-6">
 
       <!-- Logo -->
       <a href="{{ url_for('index') }}" aria-label="Vaible Herbal Home" class="shrink-0">
         <img src="{{ url_for('static', filename='images/logo/logo-vaible-herbal.png') }}"
-             alt="Vaible Herbal" class="h-9 w-auto" />
+             alt="Vaible Herbal" class="h-28 w-auto" />
       </a>
 
       <!-- Desktop navigation -->
@@ -248,11 +247,11 @@
               lg:hidden flex flex-col">
 
     <!-- Drawer header -->
-    <div class="flex items-center justify-between px-5 h-16
+    <div class="flex items-center justify-between px-5 h-24
                 border-b border-gray-100 dark:border-gray-800 shrink-0">
       <a href="{{ url_for('index') }}" aria-label="Vaible Herbal Home">
         <img src="{{ url_for('static', filename='images/logo/logo-vaible-herbal.png') }}"
-             alt="Vaible Herbal" class="h-8 w-auto" />
+             alt="Vaible Herbal" class="h-20 w-auto" />
       </a>
       <button id="drawerClose" type="button"
               aria-label="Close navigation"

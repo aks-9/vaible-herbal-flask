@@ -28,15 +28,9 @@
     if (sunIcon)  sunIcon.classList.toggle('hidden', !isDark);
   }
 
-  // Apply saved or system preference on load
+  // Apply saved preference on load; default is light
   const saved = localStorage.getItem('theme');
-  if (saved) {
-    applyTheme(saved);
-  } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    applyTheme('dark');
-  } else {
-    applyTheme('light');
-  }
+  applyTheme(saved === 'dark' ? 'dark' : 'light');
 
   document.getElementById('darkToggle')?.addEventListener('click', function () {
     applyTheme(html.classList.contains('dark') ? 'light' : 'dark');

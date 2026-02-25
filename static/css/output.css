@@ -765,8 +765,16 @@ body {
   display: none;
 }
 
-.h-16 {
-  height: 4rem;
+.h-20 {
+  height: 5rem;
+}
+
+.h-24 {
+  height: 6rem;
+}
+
+.h-28 {
+  height: 7rem;
 }
 
 .h-3\.5 {
@@ -783,10 +791,6 @@ body {
 
 .h-6 {
   height: 1.5rem;
-}
-
-.h-8 {
-  height: 2rem;
 }
 
 .h-9 {
