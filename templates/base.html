@@ -120,7 +120,7 @@
 
           <!-- Products (direct link) -->
           <li>
-            <a href="#" class="nav-link px-3 py-2 rounded-md">Products</a>
+            <a href="{{ url_for('products') }}" class="nav-link px-3 py-2 rounded-md">Products</a>
           </li>
 
           <!-- Innovation -->
@@ -308,7 +308,7 @@
 
       <!-- Products -->
       <li>
-        <a href="#"
+        <a href="{{ url_for('products') }}"
            class="block px-3 py-2.5 rounded-lg text-sm font-medium
                   text-gray-700 dark:text-gray-200
                   hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
@@ -434,7 +434,7 @@
             <li><a href="#" class="hover:text-white transition-colors">Essential Oils</a></li>
             <li><a href="#" class="hover:text-white transition-colors">Carrier Oils</a></li>
             <li><a href="#" class="hover:text-white transition-colors">Herbal Powders</a></li>
-            <li><a href="#" class="hover:text-white transition-colors">View All Products</a></li>
+            <li><a href="{{ url_for('products') }}" class="hover:text-white transition-colors">View All Products</a></li>
           </ul>
         </div>
 
