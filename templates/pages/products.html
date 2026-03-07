@@ -106,7 +106,7 @@
     {# 14-card grid #}
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
       {% for cat in categories %}
-      <a href="#"
+      <a href="{{ url_for('product_detail', slug=cat.slug) }}"
          aria-label="{{ cat.name }} — {{ cat.count }} products"
          class="group relative overflow-hidden rounded-2xl bg-gray-800
                 aspect-[4/3] block focus:outline-none focus:ring-2
