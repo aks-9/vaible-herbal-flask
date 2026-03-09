@@ -111,10 +111,10 @@
                  class="hidden absolute mt-1 bg-white dark:bg-gray-800
                         border border-gray-100 dark:border-gray-700
                         rounded-xl shadow-lg py-1.5 min-w-[200px]">
-              <a class="dropdown-item" href="#">Who We Are</a>
-              <a class="dropdown-item" href="#">Vision &amp; Mission</a>
-              <a class="dropdown-item" href="#">Management</a>
-              <a class="dropdown-item" href="#">CSR</a>
+              <a class="dropdown-item" href="{{ url_for('who_we_are') }}">Who We Are</a>
+              <a class="dropdown-item" href="{{ url_for('vision_mission') }}">Vision &amp; Mission</a>
+              <a class="dropdown-item" href="{{ url_for('management') }}">Management</a>
+              <a class="dropdown-item" href="{{ url_for('csr') }}">CSR</a>
             </div>
           </li>
 
@@ -291,16 +291,16 @@
           </svg>
         </button>
         <ul class="hidden mt-0.5 ml-3 pl-3 border-l border-gray-200 dark:border-gray-700 space-y-0.5">
-          <li><a href="#" class="block px-3 py-2 text-sm text-gray-600 dark:text-gray-300
+          <li><a href="{{ url_for('who_we_are') }}" class="block px-3 py-2 text-sm text-gray-600 dark:text-gray-300
                                  hover:text-brand-700 dark:hover:text-brand-400 transition-colors">
             Who We Are</a></li>
-          <li><a href="#" class="block px-3 py-2 text-sm text-gray-600 dark:text-gray-300
+          <li><a href="{{ url_for('vision_mission') }}" class="block px-3 py-2 text-sm text-gray-600 dark:text-gray-300
                                  hover:text-brand-700 dark:hover:text-brand-400 transition-colors">
             Vision &amp; Mission</a></li>
-          <li><a href="#" class="block px-3 py-2 text-sm text-gray-600 dark:text-gray-300
+          <li><a href="{{ url_for('management') }}" class="block px-3 py-2 text-sm text-gray-600 dark:text-gray-300
                                  hover:text-brand-700 dark:hover:text-brand-400 transition-colors">
             Management</a></li>
-          <li><a href="#" class="block px-3 py-2 text-sm text-gray-600 dark:text-gray-300
+          <li><a href="{{ url_for('csr') }}" class="block px-3 py-2 text-sm text-gray-600 dark:text-gray-300
                                  hover:text-brand-700 dark:hover:text-brand-400 transition-colors">
             CSR</a></li>
         </ul>
@@ -442,10 +442,10 @@
         <div>
           <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Company</h3>
           <ul class="space-y-2 text-sm">
-            <li><a href="#" class="hover:text-white transition-colors">Who We Are</a></li>
-            <li><a href="#" class="hover:text-white transition-colors">Vision &amp; Mission</a></li>
+            <li><a href="{{ url_for('who_we_are') }}" class="hover:text-white transition-colors">Who We Are</a></li>
+            <li><a href="{{ url_for('vision_mission') }}" class="hover:text-white transition-colors">Vision &amp; Mission</a></li>
             <li><a href="#" class="hover:text-white transition-colors">Innovation</a></li>
-            <li><a href="#" class="hover:text-white transition-colors">CSR</a></li>
+            <li><a href="{{ url_for('csr') }}" class="hover:text-white transition-colors">CSR</a></li>
             <li><a href="#" class="hover:text-white transition-colors">Career</a></li>
           </ul>
         </div>

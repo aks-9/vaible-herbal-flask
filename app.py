@@ -34,5 +34,29 @@ def product_detail(slug):
     )
 
 
+# ---------------------------------------------------------------------------
+# About section routes
+# ---------------------------------------------------------------------------
+
+@app.route("/about/who-we-are")
+def who_we_are():
+    return render_template("pages/about/who-we-are.html")
+
+
+@app.route("/about/vision-mission")
+def vision_mission():
+    return render_template("pages/about/vision-mission.html")
+
+
+@app.route("/about/management")
+def management():
+    return render_template("pages/about/management.html")
+
+
+@app.route("/about/csr")
+def csr():
+    return render_template("pages/about/csr.html")
+
+
 if __name__ == "__main__":
     app.run(debug=os.environ.get("DEBUG", "true").lower() == "true")
