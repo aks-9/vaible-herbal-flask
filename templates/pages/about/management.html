@@ -1,0 +1,210 @@
+{% extends "base.html" %}
+
+{% block title %}Management | Vaible Herbal — Leadership &amp; Expertise{% endblock %}
+
+{% block head %}
+<meta name="description" content="Meet the leadership team at Vaible Herbal — three decades of expertise in herbal ingredient sourcing, manufacturing, quality control and global B2B supply." />
+<link rel="canonical" href="https://www.vaibleherbal.in/about/management" />
+<meta property="og:type"        content="website" />
+<meta property="og:title"       content="Management | Vaible Herbal" />
+<meta property="og:description" content="The leadership behind Vaible Herbal's 30-year track record in herbal ingredient supply — domain expertise, quality discipline, and global trade experience." />
+<meta property="og:url"         content="https://www.vaibleherbal.in/about/management" />
+<meta property="og:image"       content="https://www.vaibleherbal.in/static/images/hero/slide1.jpg" />
+<meta property="og:site_name"   content="Vaible Herbal" />
+{% endblock %}
+
+{% block content %}
+
+{# ================================================================
+   PAGE HERO
+   ================================================================ #}
+<section class="bg-brand-900 dark:bg-gray-950 text-white" aria-label="Management page header">
+  <div class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-brand-800 via-brand-900 to-gray-900
+                opacity-90" aria-hidden="true"></div>
+
+    <div class="relative container-main py-16 lg:py-24">
+
+      {# Breadcrumb #}
+      <nav aria-label="Breadcrumb" class="mb-6">
+        <ol class="flex items-center gap-1.5 text-xs text-brand-300/80">
+          <li>
+            <a href="{{ url_for('index') }}"
+               class="hover:text-brand-200 transition-colors duration-150">Home</a>
+          </li>
+          <li aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5"
+                 viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+          </li>
+          <li>
+            <a href="{{ url_for('who_we_are') }}"
+               class="hover:text-brand-200 transition-colors duration-150">About Us</a>
+          </li>
+          <li aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5"
+                 viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+          </li>
+          <li class="text-white font-medium" aria-current="page">Management</li>
+        </ol>
+      </nav>
+
+      <div class="max-w-2xl">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-300 mb-3">
+          Our Leadership
+        </p>
+        <h1 class="font-display text-4xl sm:text-5xl font-bold leading-tight mb-5">
+          Domain Expertise.<br>Operational Discipline.
+        </h1>
+        <p class="text-base sm:text-lg text-white/75 leading-relaxed">
+          The leadership at Vaible Herbal brings together three decades of herbal
+          ingredient knowledge, manufacturing experience and global trade expertise.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+{# ================================================================
+   LEADERSHIP INTRO
+   ================================================================ #}
+<section class="py-16 lg:py-20 bg-white dark:bg-gray-900" aria-label="Leadership overview">
+  <div class="container-main">
+
+    <div class="max-w-3xl mx-auto text-center mb-14">
+      <p class="text-xs font-semibold uppercase tracking-widest text-brand-700
+                dark:text-brand-400 mb-3">Leadership Philosophy</p>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900
+                 dark:text-white mb-6">
+        Built by People Who Know the Plant
+      </h2>
+      <p class="text-gray-600 dark:text-gray-400 text-base leading-relaxed">
+        Our management team has spent careers understanding the herbal ingredient
+        supply chain — not at arm's length, but at the source. From identifying
+        the right botanical species in the field, to ensuring analytical compliance
+        before a shipment leaves the warehouse, the decisions are made by people
+        with deep working knowledge, not just business acumen.
+      </p>
+    </div>
+
+    {# Management expertise areas #}
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {% set expertise = [
+        ('Botanical Sourcing', 'Deep knowledge of species identification, geographic origin, harvest seasonality and supplier qualification across 100+ botanicals.',
+         'M3.375 19.5h17.25m-17.25 0a1.125 1.125 0 01-1.125-1.125M3.375 19.5h7.5c.621 0 1.125-.504 1.125-1.125m-9.75 0V5.625m0 12.75v-1.5c0-.621.504-1.125 1.125-1.125m18.375 2.625V5.625m0 12.75c0 .621-.504 1.125-1.125 1.125m1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125m0 3.75h-7.5A1.125 1.125 0 0112 18.375m9.75-12.75c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125m19.5 0v1.5c0 .621-.504 1.125-1.125 1.125M2.25 5.625v1.5c0 .621.504 1.125 1.125 1.125m0 0h17.25m-17.25 0c0 .621.504 1.125 1.125 1.125h15c.621 0 1.125-.504 1.125-1.125m-19.5 0V18.75'),
+        ('Manufacturing Operations', 'Direct oversight of extraction, processing and drying operations across manufacturing units in Himachal Pradesh.',
+         'M2.25 21h19.5m-18-18v9m3-9v9m12-9v9m3-9v9M5.25 6H18.75m0 0a2.25 2.25 0 012.25 2.25v.75M18.75 6a2.25 2.25 0 00-2.25-2.25H7.5A2.25 2.25 0 005.25 6m13.5 0v.75M5.25 6v.75M5.25 6.75h13.5'),
+        ('Quality &amp; Compliance', 'End-to-end quality system design — from incoming botanical inspection through analytical verification to batch release documentation.',
+         'M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z'),
+        ('Export &amp; Trade', 'Export documentation, regulatory correspondence and international buyer communication across 26+ countries.',
+         'M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418'),
+        ('Customer Relations', 'Long-term B2B relationship management — specification alignment, order reliability, and responsive technical support.',
+         'M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z'),
+        ('Strategic Growth', 'Category expansion, market development and long-range positioning in global herbal ingredient supply.',
+         'M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941'),
+      ] %}
+      {% for title, desc, icon_path in expertise %}
+      <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6">
+        <div class="w-10 h-10 bg-brand-700 rounded-xl flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor"
+               stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="{{ icon_path }}" />
+          </svg>
+        </div>
+        <h3 class="font-semibold text-gray-900 dark:text-white mb-2 text-sm">{{ title }}</h3>
+        <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">{{ desc }}</p>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+
+
+{# ================================================================
+   COMPANY COMMITMENT
+   ================================================================ #}
+<section class="py-16 lg:py-20 bg-gray-50 dark:bg-gray-950" aria-label="Management commitment">
+  <div class="container-main">
+    <div class="max-w-3xl mx-auto">
+
+      <div class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-100
+                  dark:border-gray-800 p-8 shadow-sm">
+        <p class="text-xs font-semibold uppercase tracking-widest text-brand-700
+                  dark:text-brand-400 mb-4">Our Commitment</p>
+        <h2 class="font-display text-2xl sm:text-3xl font-bold text-gray-900
+                   dark:text-white mb-6">
+          Management Accessible to Buyers
+        </h2>
+        <div class="space-y-4 text-gray-600 dark:text-gray-400 leading-relaxed">
+          <p>
+            At Vaible Herbal, our management team is not removed from customer interactions.
+            For technical queries about specifications, analytical reports, regulatory
+            documentation or formulation suitability, buyers speak directly with people
+            who have the expertise to answer — not a relay chain.
+          </p>
+          <p>
+            We believe that a supplier's management should be accountable to the buyer's
+            quality expectations — not just their sales targets.
+          </p>
+        </div>
+
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="#"
+             class="inline-flex items-center justify-center
+                    bg-brand-700 hover:bg-brand-800 text-white
+                    text-sm font-semibold px-6 py-3 rounded-lg
+                    transition-colors duration-200">
+            Contact Our Team
+          </a>
+          <a href="{{ url_for('products') }}"
+             class="inline-flex items-center justify-center
+                    border border-gray-200 dark:border-gray-700
+                    text-gray-700 dark:text-gray-300 text-sm font-semibold
+                    px-6 py-3 rounded-lg
+                    hover:bg-gray-50 dark:hover:bg-gray-800
+                    transition-colors duration-200">
+            View Products
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+{# ================================================================
+   WHATSAPP FLOAT BUTTON
+   ================================================================ #}
+<a href="https://wa.me/919911154497?text=Hi%20Vaible%20Herbal%2C%20I%20want%20to%20enquire%20about%20your%20products."
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Chat on WhatsApp"
+   title="Chat on WhatsApp"
+   class="fixed bottom-6 right-5 z-50
+          w-14 h-14 flex items-center justify-center
+          bg-[#25D366] hover:bg-[#1ebe57]
+          text-white rounded-full shadow-lg
+          hover:shadow-xl hover:scale-110
+          transition-all duration-200">
+  <svg class="w-7 h-7" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+    <path d="M19.11 17.39c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86
+             1.06-.16.18-.32.2-.59.07-.27-.14-1.14-.42-2.18-1.34-.81-.72-1.36-1.61-1.52-1.88
+             -.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34
+             -.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07
+             -.73.34-.25.27-.95.93-.95 2.27s.98 2.64 1.11 2.82c.14.18 1.93 2.95 4.67 4.14
+             .65.28 1.16.45 1.56.58.66.21 1.26.18 1.74.11.53-.08 1.61-.66 1.84-1.29.23-.63
+             .23-1.17.16-1.29-.07-.12-.25-.2-.52-.34z"/>
+    <path d="M26.67 5.33C23.92 2.58 20.27 1.07 16.4 1.07 8.67 1.07 2.4 7.34 2.4 15.07
+             c0 2.46.64 4.87 1.86 6.99L2.27 30.93l9.09-1.95c2.05 1.12 4.37 1.71 6.74 1.71
+             h.01c7.73 0 14-6.27 14-14 0-3.87-1.51-7.52-4.44-10.36zM18.1 28.15h-.01
+             c-2.1 0-4.16-.56-5.97-1.62l-.43-.25-5.39 1.16 1.14-5.25-.28-.45
+             c-1.17-1.85-1.79-3.99-1.79-6.17 0-6.46 5.26-11.72 11.73-11.72
+             3.14 0 6.09 1.22 8.31 3.44 2.22 2.22 3.44 5.17 3.44 8.31
+             0 6.46-5.26 11.72-11.75 11.72z"/>
+  </svg>
+</a>
+
+{% endblock %}

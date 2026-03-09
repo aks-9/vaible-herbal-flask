@@ -1,0 +1,288 @@
+{% extends "base.html" %}
+
+{% block title %}Who We Are | Vaible Herbal — Our Story &amp; Journey{% endblock %}
+
+{% block head %}
+<meta name="description" content="Learn about Vaible Herbal — a B2B herbal ingredients supplier built on three decades of sourcing discipline, process integrity, and consistent quality. Our story from 1996 to today." />
+<link rel="canonical" href="https://www.vaibleherbal.in/about/who-we-are" />
+<meta property="og:type"        content="website" />
+<meta property="og:title"       content="Who We Are | Vaible Herbal" />
+<meta property="og:description" content="Three decades of sourcing discipline, manufacturing consistency, and B2B herbal ingredient supply. Built slow. Built right." />
+<meta property="og:url"         content="https://www.vaibleherbal.in/about/who-we-are" />
+<meta property="og:image"       content="https://www.vaibleherbal.in/static/images/hero/slide1.jpg" />
+<meta property="og:site_name"   content="Vaible Herbal" />
+{% endblock %}
+
+{% block content %}
+
+{# ================================================================
+   PAGE HERO
+   ================================================================ #}
+<section class="bg-brand-900 dark:bg-gray-950 text-white" aria-label="Who We Are page header">
+  <div class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-brand-800 via-brand-900 to-gray-900
+                opacity-90" aria-hidden="true"></div>
+
+    <div class="relative container-main py-16 lg:py-24">
+
+      {# Breadcrumb #}
+      <nav aria-label="Breadcrumb" class="mb-6">
+        <ol class="flex items-center gap-1.5 text-xs text-brand-300/80">
+          <li>
+            <a href="{{ url_for('index') }}"
+               class="hover:text-brand-200 transition-colors duration-150">Home</a>
+          </li>
+          <li aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5"
+                 viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+          </li>
+          <li>
+            <a href="{{ url_for('who_we_are') }}"
+               class="hover:text-brand-200 transition-colors duration-150">About Us</a>
+          </li>
+          <li aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5"
+                 viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+          </li>
+          <li class="text-white font-medium" aria-current="page">Who We Are</li>
+        </ol>
+      </nav>
+
+      <div class="max-w-2xl">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-300 mb-3">Our Story</p>
+        <h1 class="font-display text-4xl sm:text-5xl font-bold leading-tight mb-5">
+          Built Slow.<br>Built Right.
+        </h1>
+        <p class="text-base sm:text-lg text-white/75 leading-relaxed">
+          Three decades of sourcing discipline, manufacturing consistency, and
+          process integrity — supplying standardised herbal ingredients to B2B
+          buyers across 26+ countries.
+        </p>
+      </div>
+
+      {# Key facts strip #}
+      <ul class="mt-10 flex flex-wrap gap-8 text-center sm:text-left">
+        {% set facts = [
+          ('1996', 'Founded'),
+          ('30+', 'Years in Herbal Industry'),
+          ('700+', 'Active SKUs'),
+          ('26+', 'Countries Supplied'),
+        ] %}
+        {% for num, label in facts %}
+        <li class="flex flex-col gap-0.5">
+          <span class="font-display text-2xl font-bold text-brand-200">{{ num }}</span>
+          <span class="text-xs font-medium text-white/60 uppercase tracking-wider">{{ label }}</span>
+        </li>
+        {% endfor %}
+      </ul>
+
+    </div>
+  </div>
+</section>
+
+
+{# ================================================================
+   COMPANY INTRO
+   ================================================================ #}
+<section class="py-16 lg:py-20 bg-white dark:bg-gray-900" aria-label="Company introduction">
+  <div class="container-main">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-widest text-brand-700
+                  dark:text-brand-400 mb-3">Who We Are</p>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900
+                   dark:text-white mb-6 leading-tight">
+          A Supplier Built on Process,<br class="hidden sm:block"> Not Just Promise
+        </h2>
+        <div class="space-y-4 text-gray-600 dark:text-gray-400 text-base leading-relaxed">
+          <p>
+            Vaible Herbal is a B2B manufacturer and exporter of standardised herbal extracts,
+            essential oils, carrier oils, herbal powders and botanical concentrates. We operate
+            from manufacturing facilities in Himachal Pradesh, India, supplying pharmaceutical,
+            nutraceutical and cosmetic companies worldwide.
+          </p>
+          <p>
+            Our foundation is not marketing. It is a sourcing discipline that begins at the
+            botanical source — selecting the right species, part, season and geography —
+            and continues through every stage of processing, quality control and documentation.
+          </p>
+          <p>
+            We do not chase volume. We build repeat relationships with buyers who value
+            consistency, compliance, and a supplier who speaks the same quality language.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4">
+        {% set strengths = [
+          ('Sourcing Discipline', 'Botanical species, plant part, geography and harvest season — selected for each specification.'),
+          ('Process Control', 'Standardised manufacturing across extraction, concentration and drying stages.'),
+          ('Analytical Verification', 'In-house QC backed by accredited third-party testing. COA on every batch.'),
+          ('Export Readiness', 'MSDS, COA, and full export documentation prepared for global B2B buyers.'),
+        ] %}
+        {% for title, desc in strengths %}
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-5">
+          <div class="w-8 h-8 bg-brand-100 dark:bg-brand-900/40 rounded-lg
+                      flex items-center justify-center mb-3">
+            <svg class="w-4 h-4 text-brand-700 dark:text-brand-400" fill="none"
+                 stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <h3 class="text-sm font-semibold text-gray-900 dark:text-white mb-1.5">{{ title }}</h3>
+          <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">{{ desc }}</p>
+        </div>
+        {% endfor %}
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+{# ================================================================
+   TIMELINE
+   ================================================================ #}
+<section class="py-16 lg:py-24 bg-gray-50 dark:bg-gray-950" aria-label="Company journey timeline">
+  <div class="container-main">
+
+    <div class="text-center mb-14">
+      <p class="text-xs font-semibold uppercase tracking-widest text-brand-700
+                dark:text-brand-400 mb-2">Our Journey</p>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+        Three Decades of Consistent Progress
+      </h2>
+      <p class="text-gray-500 dark:text-gray-400 max-w-xl mx-auto">
+        From foundational sourcing habits in 1996 to global export partnerships today —
+        each phase built on what came before.
+      </p>
+    </div>
+
+    {# Timeline list #}
+    <ol class="relative border-l-2 border-brand-200 dark:border-brand-900 ml-4 lg:ml-8
+               space-y-10" aria-label="Company milestones">
+
+      {% set milestones = [
+        ('1996', 'Origin', 'Our founding discipline: clean sourcing, honest processing, long-term trust.',
+         ['Foundational sourcing discipline', 'Clean processing focus', 'Built for long-term trust']),
+        ('2001', 'Process Foundations', 'Systematic habits that would define our quality culture.',
+         ['Incoming inspection habits', 'Batch traceability mindset', 'Consistency-first operations']),
+        ('2004', 'Manufacturing Unit — Nahan', 'First dedicated facility at Ram Nagar, Nahan, Himachal Pradesh.',
+         ['Improved throughput', 'Better process control', 'Systematic production planning']),
+        ('2008', 'Second Manufacturing Unit', 'Expanded capacity at Nahan to meet growing demand.',
+         ['Capacity expansion', 'Stronger workflows', 'Improved batch consistency']),
+        ('2012', 'Pan-India Reach', 'Supply capability extended across all major Indian markets.',
+         ['Pan-India supply capability', 'Documentation maturity', 'Quality controls strengthened']),
+        ('2016', 'Quality Systems Upgrade', 'Formalised QC discipline aligned with buyer specifications.',
+         ['Sampling discipline', 'Specification alignment', 'Compliance-first mindset']),
+        ('2018', 'International Expansion', 'First exports to Dubai and USA — export documentation fully in place.',
+         ['Export readiness', 'Customer specifications met', 'Global documentation standards']),
+        ('2021', 'Capability Deepening', 'Process and quality depth to serve a broader product range.',
+         ['Process refinement', 'Quality control depth', 'Customer confidence building']),
+        ('2024', 'Innovation & Quality Control', 'Active investment in analytical capability and new formulation categories.',
+         ['Analytical capability investment', 'New category development', 'Continuous improvement formalised']),
+        ('2025', 'India + Global Partners', 'Pan-India and global export partnerships — quality-led positioning.',
+         ['Pan-India + exports', 'Quality-led positioning', 'Long-term partnerships']),
+      ] %}
+
+      {% for year, title, text, bullets in milestones %}
+      <li class="ml-8">
+        {# Timeline dot #}
+        <span class="absolute -left-[9px] flex h-4 w-4 items-center justify-center
+                     rounded-full bg-brand-700 dark:bg-brand-600 ring-4
+                     ring-gray-50 dark:ring-gray-950" aria-hidden="true"></span>
+
+        <div class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-100
+                    dark:border-gray-800 p-6 shadow-sm">
+          <time class="text-[10px] font-bold uppercase tracking-widest text-brand-700
+                       dark:text-brand-400">{{ year }}</time>
+          <h3 class="font-display text-lg font-bold text-gray-900 dark:text-white mt-1 mb-2">
+            {{ title }}
+          </h3>
+          <p class="text-sm text-gray-500 dark:text-gray-400 mb-3 leading-relaxed">{{ text }}</p>
+          <ul class="flex flex-wrap gap-2">
+            {% for bullet in bullets %}
+            <li class="text-[10px] font-semibold uppercase tracking-wider
+                       bg-brand-50 dark:bg-brand-900/30 text-brand-700 dark:text-brand-400
+                       px-2.5 py-1 rounded-md">{{ bullet }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </li>
+      {% endfor %}
+
+    </ol>
+  </div>
+</section>
+
+
+{# ================================================================
+   CTA STRIP
+   ================================================================ #}
+<section class="py-16 bg-white dark:bg-gray-900" aria-label="Contact call to action">
+  <div class="container-main">
+    <div class="rounded-2xl bg-brand-800 dark:bg-brand-900 px-8 py-10 text-center text-white">
+      <h3 class="font-display text-2xl sm:text-3xl font-bold mb-3">
+        Ready to Work with Us?
+      </h3>
+      <p class="text-white/75 max-w-xl mx-auto mb-7 text-sm sm:text-base leading-relaxed">
+        Tell us what you need — botanical species, specification, volume, or documentation.
+        We respond within 24 hours.
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <a href="#"
+           class="inline-flex items-center justify-center
+                  bg-white text-brand-800 text-sm font-semibold
+                  px-7 py-3 rounded-lg shadow
+                  hover:bg-brand-50 transition-colors duration-200">
+          Contact Us
+        </a>
+        <a href="https://wa.me/919911154497?text=Hi%20Vaible%20Herbal%2C%20I%27d%20like%20to%20learn%20more%20about%20your%20company."
+           target="_blank"
+           rel="noopener noreferrer"
+           class="inline-flex items-center gap-2 justify-center
+                  border border-white/40 text-white text-sm font-semibold
+                  px-7 py-3 rounded-lg
+                  hover:bg-white/10 transition-colors duration-200">
+          Chat on WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{# ================================================================
+   WHATSAPP FLOAT BUTTON
+   ================================================================ #}
+<a href="https://wa.me/919911154497?text=Hi%20Vaible%20Herbal%2C%20I%20want%20to%20enquire%20about%20your%20products."
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Chat on WhatsApp"
+   title="Chat on WhatsApp"
+   class="fixed bottom-6 right-5 z-50
+          w-14 h-14 flex items-center justify-center
+          bg-[#25D366] hover:bg-[#1ebe57]
+          text-white rounded-full shadow-lg
+          hover:shadow-xl hover:scale-110
+          transition-all duration-200">
+  <svg class="w-7 h-7" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+    <path d="M19.11 17.39c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86
+             1.06-.16.18-.32.2-.59.07-.27-.14-1.14-.42-2.18-1.34-.81-.72-1.36-1.61-1.52-1.88
+             -.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34
+             -.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07
+             -.73.34-.25.27-.95.93-.95 2.27s.98 2.64 1.11 2.82c.14.18 1.93 2.95 4.67 4.14
+             .65.28 1.16.45 1.56.58.66.21 1.26.18 1.74.11.53-.08 1.61-.66 1.84-1.29.23-.63
+             .23-1.17.16-1.29-.07-.12-.25-.2-.52-.34z"/>
+    <path d="M26.67 5.33C23.92 2.58 20.27 1.07 16.4 1.07 8.67 1.07 2.4 7.34 2.4 15.07
+             c0 2.46.64 4.87 1.86 6.99L2.27 30.93l9.09-1.95c2.05 1.12 4.37 1.71 6.74 1.71
+             h.01c7.73 0 14-6.27 14-14 0-3.87-1.51-7.52-4.44-10.36zM18.1 28.15h-.01
+             c-2.1 0-4.16-.56-5.97-1.62l-.43-.25-5.39 1.16 1.14-5.25-.28-.45
+             c-1.17-1.85-1.79-3.99-1.79-6.17 0-6.46 5.26-11.72 11.73-11.72
+             3.14 0 6.09 1.22 8.31 3.44 2.22 2.22 3.44 5.17 3.44 8.31
+             0 6.46-5.26 11.72-11.75 11.72z"/>
+  </svg>
+</a>
+
+{% endblock %}
