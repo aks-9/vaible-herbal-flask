@@ -1,0 +1,310 @@
+{% extends "base.html" %}
+
+{% block title %}Quality Systems &amp; Continuous Improvement | Vaible Herbal{% endblock %}
+
+{% block head %}
+<meta name="description" content="Quality systems and continuous improvement at Vaible Herbal — GMP-aligned practices, non-thermal decontamination, multi-stage sterile filtration, in-house lab facilities, and contaminant compliance." />
+<link rel="canonical" href="https://www.vaibleherbal.in/innovation/quality-systems-ci" />
+<meta property="og:type"        content="website" />
+<meta property="og:title"       content="Quality Systems &amp; Continuous Improvement | Vaible Herbal" />
+<meta property="og:description" content="Advanced non-thermal decontamination, sterile filtration cascade (50µm → 0.22µm), in-house labs, and batch-level COA integrity — how Vaible Herbal maintains quality at every stage." />
+<meta property="og:url"         content="https://www.vaibleherbal.in/innovation/quality-systems-ci" />
+<meta property="og:image"       content="https://www.vaibleherbal.in/static/images/hero/slide1.jpg" />
+<meta property="og:site_name"   content="Vaible Herbal" />
+{% endblock %}
+
+{% block content %}
+
+{# ================================================================
+   PAGE HERO
+   ================================================================ #}
+<section class="bg-brand-900 dark:bg-gray-950 text-white">
+  <div class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-brand-800 via-brand-900 to-gray-900 opacity-90" aria-hidden="true"></div>
+    <div class="relative container-main py-16 lg:py-24">
+
+      <nav aria-label="Breadcrumb" class="mb-6">
+        <ol class="flex items-center gap-1.5 text-xs text-brand-300/80">
+          <li><a href="{{ url_for('index') }}" class="hover:text-brand-200 transition-colors">Home</a></li>
+          <li aria-hidden="true"><svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></li>
+          <li class="text-brand-200">Innovation</li>
+          <li aria-hidden="true"><svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></li>
+          <li class="text-white font-medium" aria-current="page">Quality Systems &amp; CI</li>
+        </ol>
+      </nav>
+
+      <div class="max-w-2xl">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-300 mb-3">Innovation</p>
+        <h1 class="font-display text-4xl sm:text-5xl font-bold leading-tight mb-5">
+          Quality Systems &amp;<br>Continuous Improvement
+        </h1>
+        <p class="text-base sm:text-lg text-white/75 leading-relaxed">
+          GMP-aligned manufacturing, advanced decontamination, multi-stage sterile filtration,
+          in-house analytical labs, and contaminant compliance — quality built in, not inspected in.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{# ================================================================
+   NON-THERMAL DECONTAMINATION
+   ================================================================ #}
+<section class="py-16 lg:py-20 bg-white dark:bg-gray-900" id="non-thermal-decon">
+  <div class="container-main">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-widest text-brand-700 dark:text-brand-400 mb-3">Quality Control</p>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-6">
+          Advanced Non-Thermal<br>Decontamination Technology
+        </h2>
+        <div class="space-y-4 text-gray-600 dark:text-gray-400 leading-relaxed">
+          <p>
+            Advanced non-thermal decontamination technologies are utilised at Vaible Herbal to ensure
+            microbiological safety while preserving the natural and functional integrity of herbal ingredients.
+            These controlled processes minimise thermal stress, helping protect heat-sensitive phytochemicals,
+            volatile constituents, and key marker compounds.
+          </p>
+          <p>
+            By reducing microbial load without affecting potency, colour, aroma, or solubility,
+            non-thermal decontamination supports consistent product quality, stability, and compliance
+            with global pharmacopeial and quality requirements.
+          </p>
+        </div>
+        <div class="mt-6 flex flex-wrap gap-2">
+          {% for chip in ['Microbial control', 'Preserves actives', 'Batch consistency', 'Export-ready quality'] %}
+          <span class="text-[10px] font-semibold uppercase tracking-wider bg-brand-50 dark:bg-brand-900/30 text-brand-700 dark:text-brand-400 px-2.5 py-1 rounded-md">{{ chip }}</span>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-7">
+        <h3 class="font-semibold text-gray-900 dark:text-white mb-4 text-sm">Why Non-Thermal?</h3>
+        <ul class="space-y-4">
+          {% set reasons = [
+            ('Preserves Heat-Sensitive Actives', 'Conventional thermal treatment degrades volatile essential oil constituents, certain alkaloids, and heat-labile flavonoids. Non-thermal methods bypass this entirely.'),
+            ('Maintains Colour & Organoleptics', 'High heat causes Maillard browning and colour shifts in extract powders. Non-thermal processing preserves the original colour profile.'),
+            ('Microbiological Compliance', 'Achieves pharmacopeial microbial limits (TAMC, TYMC, specific pathogens) without the trade-off of constituent degradation.'),
+            ('Batch Reproducibility', 'Controlled, validated process parameters ensure consistent decontamination outcomes batch to batch.'),
+          ] %}
+          {% for title, desc in reasons %}
+          <li class="flex gap-3">
+            <svg class="w-4 h-4 text-brand-600 dark:text-brand-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+            </svg>
+            <div>
+              <span class="text-sm font-semibold text-gray-900 dark:text-white">{{ title }}</span>
+              <p class="text-sm text-gray-500 dark:text-gray-400 mt-0.5 leading-relaxed">{{ desc }}</p>
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+{# ================================================================
+   STERILE FILTRATION CASCADE
+   ================================================================ #}
+<section class="py-16 lg:py-20 bg-gray-50 dark:bg-gray-950" id="sterile-filtration">
+  <div class="container-main">
+
+    <div class="max-w-3xl mb-12">
+      <p class="text-xs font-semibold uppercase tracking-widest text-brand-700 dark:text-brand-400 mb-3">Quality Control</p>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-6">
+        Multi-Stage Sterile Filtration<br class="hidden sm:block">(50 µm → 0.22 µm)
+      </h2>
+      <div class="space-y-4 text-gray-600 dark:text-gray-400 leading-relaxed">
+        <p>
+          Liquid herbal extracts at Vaible Herbal are processed through a validated multi-stage
+          sterile filtration cascade designed to ensure particulate control, bioburden reduction,
+          and microbiological safety in line with global quality expectations.
+        </p>
+        <p>
+          The filtration train progresses sequentially through graded cartridges:
+          <strong class="text-gray-900 dark:text-white">50 µm → 10 µm → 5 µm → 1 µm → 0.22 µm</strong>.
+          Each stage protects the next by reducing load in a controlled manner, safeguarding filter
+          integrity and preserving the extract's functional characteristics.
+        </p>
+      </div>
+    </div>
+
+    {# Filtration stages #}
+    <div class="space-y-4">
+      {% set filtration_stages = [
+        ('50 µm', 'Primary Clarification', 'Large suspended solids, plant fibres, undissolved residues, sand/dirt, visible particulates.', 'bg-brand-100 dark:bg-brand-900/50 text-brand-800 dark:text-brand-300'),
+        ('10 µm', 'Intermediate Clarification', 'Medium particulates, finer botanical debris, coarse colloidal matter.', 'bg-brand-200 dark:bg-brand-900/60 text-brand-800 dark:text-brand-300'),
+        ('5 µm', 'Fine Clarification', 'Fine suspended solids, insoluble colloids, precipitates formed during cooling/storage.', 'bg-brand-300 dark:bg-brand-800/70 text-brand-900 dark:text-brand-200'),
+        ('1 µm', 'Bioburden Reduction', 'Very fine particulates, partial reduction of yeast/fungal spores and microbial load (pre-sterile safeguard).', 'bg-brand-400 dark:bg-brand-700/80 text-white dark:text-brand-100'),
+        ('0.22 µm', 'Sterile Filtration (Terminal)', 'Bacteria (e.g., E. coli, Pseudomonas, Staphylococcus) and residual fine particulates — critical control point for microbiological safety.', 'bg-brand-700 dark:bg-brand-700 text-white'),
+      ] %}
+      {% for size, stage, removes, colour_class in filtration_stages %}
+      <div class="flex gap-4 items-start bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 p-5 shadow-sm">
+        <div class="shrink-0 flex items-center justify-center rounded-xl px-3 py-2 {{ colour_class }}">
+          <span class="text-xs font-bold font-mono whitespace-nowrap">{{ size }}</span>
+        </div>
+        <div>
+          <h3 class="text-sm font-semibold text-gray-900 dark:text-white mb-1">{{ stage }}</h3>
+          <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed"><span class="text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wide mr-1">Removes:</span>{{ removes }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <p class="mt-6 text-sm text-gray-500 dark:text-gray-400 italic">
+      The terminal 0.22 µm step delivers a clear, application-ready liquid extract suitable for pharmaceutical, nutraceutical, cosmetic, and functional food use.
+    </p>
+
+    <div class="mt-6 flex flex-wrap gap-2">
+      {% for chip in ['Particulate control', 'Bioburden reduction', 'Sterile filtration (0.22 µm)', 'Export-ready quality'] %}
+      <span class="text-[10px] font-semibold uppercase tracking-wider bg-brand-50 dark:bg-brand-900/30 text-brand-700 dark:text-brand-400 px-2.5 py-1 rounded-md">{{ chip }}</span>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+
+
+{# ================================================================
+   LABORATORY FACILITIES
+   ================================================================ #}
+<section class="py-16 lg:py-20 bg-white dark:bg-gray-900" id="lab-facilities">
+  <div class="container-main">
+
+    <div class="text-center mb-12">
+      <p class="text-xs font-semibold uppercase tracking-widest text-brand-700 dark:text-brand-400 mb-2">Quality Control</p>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+        Laboratory Facilities &amp; Analytical Capabilities
+      </h2>
+      <p class="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
+        Our in-house laboratory facilities support comprehensive quality control, analytical verification,
+        and microbiological monitoring across every stage of production — enabling systematic evaluation
+        of raw materials, in-process samples, and finished products.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      {% set labs = [
+        ('Analytical &amp; Instrumentation Laboratory',
+         'Equipped with advanced instrumentation for qualitative and quantitative assessment of botanical extracts, essential oils, and natural ingredients. Capabilities include chromatographic analysis, physicochemical testing, and optical measurements.',
+         ['Chromatographic &amp; physicochemical evaluation', 'Marker compound verification', 'Batch-to-batch consistency checks']),
+        ('Microbiological Testing Facility',
+         'Dedicated microbiological testing facilities support controlled incubation, environmental monitoring, and microbial enumeration — an integral part of routine hygiene control and quality assurance.',
+         ['Controlled incubation &amp; monitoring', 'Microbial enumeration support', 'Routine hygiene and quality oversight']),
+        ('Sample Preparation &amp; Wet Chemistry Laboratory',
+         'Designed to support accurate and reproducible testing across diverse product matrices. Facilities enable controlled grinding, mixing, filtration, solvent handling, and sample concentration.',
+         ['Controlled sample processing and filtration', 'Solvent handling and concentration support', 'Reproducible testing across matrices']),
+        ('Stability &amp; Controlled Environment Testing',
+         'Controlled temperature and humidity environments for drying studies, stability evaluations, and storage of test samples — ensuring product integrity under defined environmental conditions.',
+         ['Controlled temperature &amp; humidity conditions', 'Support for drying and stability evaluations', 'Defined storage for test samples']),
+      ] %}
+      {% for title, desc, bullets in labs %}
+      <article class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-7">
+        <h3 class="font-display text-base font-bold text-gray-900 dark:text-white mb-3">{{ title }}</h3>
+        <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed mb-4">{{ desc }}</p>
+        <ul class="space-y-1.5">
+          {% for bullet in bullets %}
+          <li class="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400">
+            <svg class="w-4 h-4 text-brand-600 dark:text-brand-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+            </svg>
+            {{ bullet }}
+          </li>
+          {% endfor %}
+        </ul>
+      </article>
+      {% endfor %}
+    </div>
+
+    <p class="mt-8 text-sm text-gray-500 dark:text-gray-400 text-center italic">
+      Together, these laboratory capabilities enable Vaible Herbal to maintain consistent quality,
+      support regulatory expectations, and deliver analytically verified herbal ingredients for global markets.
+    </p>
+
+  </div>
+</section>
+
+
+{# ================================================================
+   COMPLIANCE & CONTAMINANT CONTROL
+   ================================================================ #}
+<section class="py-16 lg:py-20 bg-gray-50 dark:bg-gray-950" id="compliances">
+  <div class="container-main">
+
+    <div class="text-center mb-12">
+      <p class="text-xs font-semibold uppercase tracking-widest text-brand-700 dark:text-brand-400 mb-2">Quality Control</p>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+        Compliance &amp; Contaminant Control
+      </h2>
+      <p class="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
+        Systematic monitoring of key contaminant categories in line with applicable customer
+        specifications and international requirements — from raw material qualification through finished product release.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      {% set compliance_items = [
+        ('Aflatoxin Compliance',
+         'Aflatoxins are monitored to ensure botanical materials meet defined safety limits. Risk-based control begins at raw material sourcing and continues through testing and batch verification to support export requirements and customer specifications.'),
+        ('Pesticide Residue Compliance',
+         'Pesticide residue screening is conducted to support compliance with applicable limits for targeted markets. Supplier qualification, raw material controls, and analytical verification help ensure residue levels remain within defined acceptance criteria.'),
+        ('Heavy Metal Level Compliance',
+         'Heavy metals (lead, cadmium, arsenic, mercury) are evaluated to ensure materials align with specified limits. Testing and quality controls support safe use in nutraceutical, cosmetic, and pharmaceutical supply chains.'),
+        ('Allergen Compliance',
+         'Allergen risk management includes review of raw material origin, cross-contamination controls, and documentation practices. Where applicable, allergen status is addressed through batch documentation and quality review.'),
+      ] %}
+      {% for title, desc in compliance_items %}
+      <article class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 p-6 shadow-sm">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="w-8 h-8 bg-brand-700 rounded-lg flex items-center justify-center shrink-0">
+            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-gray-900 dark:text-white text-sm">{{ title }}</h3>
+        </div>
+        <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">{{ desc }}</p>
+      </article>
+      {% endfor %}
+    </div>
+
+    <p class="mt-8 text-sm text-center text-gray-500 dark:text-gray-400">
+      <strong class="text-gray-700 dark:text-gray-300">Note:</strong> Specific limits, methods, and COA values are provided on request as per product and market requirements.
+    </p>
+
+  </div>
+</section>
+
+
+{# ================================================================
+   CTA
+   ================================================================ #}
+<section class="py-16 bg-white dark:bg-gray-900">
+  <div class="container-main">
+    <div class="rounded-2xl bg-brand-800 dark:bg-brand-900 px-8 py-10 text-center text-white">
+      <h3 class="font-display text-2xl sm:text-3xl font-bold mb-3">Request COA or Quality Documentation</h3>
+      <p class="text-white/75 max-w-xl mx-auto mb-7 text-sm leading-relaxed">
+        COA, MSDS, allergen statements, contaminant test reports — available on request for any product. Contact us with the ingredient and documentation requirement.
+      </p>
+      <a href="#" class="inline-flex items-center justify-center bg-white text-brand-800 text-sm font-semibold px-7 py-3 rounded-lg shadow hover:bg-brand-50 transition-colors duration-200">
+        Request Documentation
+      </a>
+    </div>
+  </div>
+</section>
+
+<a href="https://wa.me/919911154497?text=Hi%20Vaible%20Herbal%2C%20I%20want%20to%20enquire%20about%20your%20products."
+   target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" title="Chat on WhatsApp"
+   class="fixed bottom-6 right-5 z-50 w-14 h-14 flex items-center justify-center bg-[#25D366] hover:bg-[#1ebe57] text-white rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-200">
+  <svg class="w-7 h-7" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+    <path d="M19.11 17.39c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.14-.42-2.18-1.34-.81-.72-1.36-1.61-1.52-1.88-.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.64 1.11 2.82c.14.18 1.93 2.95 4.67 4.14.65.28 1.16.45 1.56.58.66.21 1.26.18 1.74.11.53-.08 1.61-.66 1.84-1.29.23-.63.23-1.17.16-1.29-.07-.12-.25-.2-.52-.34z"/>
+    <path d="M26.67 5.33C23.92 2.58 20.27 1.07 16.4 1.07 8.67 1.07 2.4 7.34 2.4 15.07c0 2.46.64 4.87 1.86 6.99L2.27 30.93l9.09-1.95c2.05 1.12 4.37 1.71 6.74 1.71h.01c7.73 0 14-6.27 14-14 0-3.87-1.51-7.52-4.44-10.36zM18.1 28.15h-.01c-2.1 0-4.16-.56-5.97-1.62l-.43-.25-5.39 1.16 1.14-5.25-.28-.45c-1.17-1.85-1.79-3.99-1.79-6.17 0-6.46 5.26-11.72 11.73-11.72 3.14 0 6.09 1.22 8.31 3.44 2.22 2.22 3.44 5.17 3.44 8.31 0 6.46-5.26 11.72-11.75 11.72z"/>
+  </svg>
+</a>
+
+{% endblock %}

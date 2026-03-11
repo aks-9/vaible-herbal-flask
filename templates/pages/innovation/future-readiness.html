@@ -1,0 +1,190 @@
+{% extends "base.html" %}
+
+{% block title %}Future Readiness | Vaible Herbal{% endblock %}
+
+{% block head %}
+<meta name="description" content="Vaible Herbal's future readiness strategy — monitoring regulatory changes, emerging ingredient trends, sustainability initiatives, and technological advancements shaping the global herbal industry." />
+<link rel="canonical" href="https://www.vaibleherbal.in/innovation/future-readiness" />
+<meta property="og:type"        content="website" />
+<meta property="og:title"       content="Future Readiness | Vaible Herbal" />
+<meta property="og:description" content="How Vaible Herbal stays ahead — regulatory monitoring, emerging categories, sustainability investment, and adaptability for long-term customer confidence." />
+<meta property="og:url"         content="https://www.vaibleherbal.in/innovation/future-readiness" />
+<meta property="og:image"       content="https://www.vaibleherbal.in/static/images/hero/slide1.jpg" />
+<meta property="og:site_name"   content="Vaible Herbal" />
+{% endblock %}
+
+{% block content %}
+
+{# ================================================================
+   PAGE HERO
+   ================================================================ #}
+<section class="bg-brand-900 dark:bg-gray-950 text-white">
+  <div class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-brand-800 via-brand-900 to-gray-900 opacity-90" aria-hidden="true"></div>
+    <div class="relative container-main py-16 lg:py-24">
+
+      <nav aria-label="Breadcrumb" class="mb-6">
+        <ol class="flex items-center gap-1.5 text-xs text-brand-300/80">
+          <li><a href="{{ url_for('index') }}" class="hover:text-brand-200 transition-colors">Home</a></li>
+          <li aria-hidden="true"><svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></li>
+          <li class="text-brand-200">Innovation</li>
+          <li aria-hidden="true"><svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></li>
+          <li class="text-white font-medium" aria-current="page">Future Readiness</li>
+        </ol>
+      </nav>
+
+      <div class="max-w-2xl">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-300 mb-3">Innovation</p>
+        <h1 class="font-display text-4xl sm:text-5xl font-bold leading-tight mb-5">
+          Future Readiness
+        </h1>
+        <p class="text-base sm:text-lg text-white/75 leading-relaxed">
+          Monitoring regulatory changes, emerging ingredient trends, sustainability
+          requirements, and technology shifts — so our customers never outgrow their supplier.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{# ================================================================
+   INTRO
+   ================================================================ #}
+<section class="py-16 lg:py-20 bg-white dark:bg-gray-900">
+  <div class="container-main">
+    <div class="max-w-3xl">
+      <p class="text-xs font-semibold uppercase tracking-widest text-brand-700 dark:text-brand-400 mb-3">Our Commitment</p>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-6">
+        A Supplier That Grows With You
+      </h2>
+      <div class="space-y-4 text-gray-600 dark:text-gray-400 leading-relaxed">
+        <p>
+          The global herbal ingredient industry is not static. Regulatory frameworks evolve.
+          New markets emerge with different compliance requirements. Consumer trends push
+          product development teams toward new botanicals and formats. And technology
+          continuously reshapes what is possible in extraction and quality control.
+        </p>
+        <p>
+          At Vaible Herbal, future readiness is not aspirational language. It is an active
+          monitoring and adaptation function — ensuring that what we can supply, document,
+          and certify stays ahead of what our customers and their markets will require.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{# ================================================================
+   READINESS PILLARS
+   ================================================================ #}
+<section class="py-16 lg:py-20 bg-gray-50 dark:bg-gray-950">
+  <div class="container-main">
+
+    <div class="text-center mb-12">
+      <p class="text-xs font-semibold uppercase tracking-widest text-brand-700 dark:text-brand-400 mb-2">How We Stay Ready</p>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+        Four Dimensions of Future Readiness
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      {% set pillars = [
+        ('Regulatory Monitoring',
+         'Pharmacopeial updates, export market compliance changes, contaminant limit revisions, new monograph additions.',
+         ['USP, IP, EP, BP monograph updates tracked', 'EU, US, Middle East, ASEAN market requirements', 'FSSAI and Indian regulatory landscape', 'Pesticide and heavy metal limit revisions', 'New pharmacopeial methods adopted proactively'],
+         'M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418'),
+        ('Emerging Category Development',
+         'New botanicals, formats, and standardised extracts entering market demand — tracked and developed ahead of volume requirements.',
+         ['Trending ingredients assessed for feasibility', 'Novel extraction formats (nanoemulsions, liposomal)', 'Functional food-grade specification development', 'Adaptogen and nootropic category growth', 'Clean label and minimal processing formats'],
+         'M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z'),
+        ('Sustainability Integration',
+         'Sustainable sourcing, waste reduction, energy efficiency, and supply chain transparency aligned with global ESG expectations.',
+         ['Sustainable harvesting source verification', 'Waste and effluent reduction in manufacturing', 'Packaging shift toward reduced-plastic options', 'Supply chain transparency documentation', 'Supplier ESG assessment framework'],
+         'M12 3c2.755 0 5.455.232 8.083.678.533.09.917.556.917 1.096v1.044a2.25 2.25 0 01-.659 1.591l-5.432 5.432a2.25 2.25 0 00-.659 1.591v2.927a2.25 2.25 0 01-1.244 2.013L9.75 21v-6.568a2.25 2.25 0 00-.659-1.591L3.659 7.409A2.25 2.25 0 013 5.818V4.774c0-.54.384-1.006.917-1.096A48.32 48.32 0 0112 3z'),
+        ('Technology Adoption',
+         'Analytical capability upgrades, process automation, and digital documentation systems that improve quality assurance and customer communication.',
+         ['Analytical instrumentation upgrades', 'Digital batch record and traceability systems', 'Process parameter monitoring and automation', 'Third-party accreditation expansion', 'Customer portal for documentation access'],
+         'M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25'),
+      ] %}
+      {% for title, subtitle, bullets, icon_path in pillars %}
+      <article class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 p-7 shadow-sm">
+        <div class="flex items-start gap-4 mb-5">
+          <div class="shrink-0 w-10 h-10 bg-brand-700 rounded-xl flex items-center justify-center">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="{{ icon_path }}"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-display text-lg font-bold text-gray-900 dark:text-white">{{ title }}</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">{{ subtitle }}</p>
+          </div>
+        </div>
+        <ul class="space-y-2">
+          {% for bullet in bullets %}
+          <li class="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400">
+            <svg class="w-4 h-4 text-brand-600 dark:text-brand-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+            </svg>
+            {{ bullet }}
+          </li>
+          {% endfor %}
+        </ul>
+      </article>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+
+
+{# ================================================================
+   CLOSING STATEMENT
+   ================================================================ #}
+<section class="py-16 lg:py-20 bg-white dark:bg-gray-900">
+  <div class="container-main">
+    <div class="max-w-3xl mx-auto text-center">
+      <blockquote class="font-display text-xl sm:text-2xl font-bold text-brand-800 dark:text-brand-300 italic mb-6">
+        "The customers who stay with us longest are those who grow into new markets
+        and never have to find a new supplier to get there."
+      </blockquote>
+      <p class="text-gray-600 dark:text-gray-400 text-base leading-relaxed">
+        Future readiness is not about predicting trends. It is about building the
+        operational capacity, knowledge base, and documentation standards to respond
+        to whatever the next market requirement turns out to be — and doing it before
+        our customers have to ask.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+{# ================================================================
+   CTA
+   ================================================================ #}
+<section class="py-16 bg-gray-50 dark:bg-gray-950">
+  <div class="container-main">
+    <div class="rounded-2xl bg-brand-800 dark:bg-brand-900 px-8 py-10 text-center text-white">
+      <h3 class="font-display text-2xl sm:text-3xl font-bold mb-3">Planning for a New Market?</h3>
+      <p class="text-white/75 max-w-xl mx-auto mb-7 text-sm leading-relaxed">
+        Tell us the destination market, the product category, and the compliance requirements you need to meet. We will assess what documentation and specification standards apply.
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <a href="#" class="inline-flex items-center justify-center bg-white text-brand-800 text-sm font-semibold px-7 py-3 rounded-lg shadow hover:bg-brand-50 transition-colors duration-200">Contact Us</a>
+        <a href="{{ url_for('products') }}" class="inline-flex items-center justify-center border border-white/40 text-white text-sm font-semibold px-7 py-3 rounded-lg hover:bg-white/10 transition-colors duration-200">View Products</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<a href="https://wa.me/919911154497?text=Hi%20Vaible%20Herbal%2C%20I%20want%20to%20enquire%20about%20your%20products."
+   target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" title="Chat on WhatsApp"
+   class="fixed bottom-6 right-5 z-50 w-14 h-14 flex items-center justify-center bg-[#25D366] hover:bg-[#1ebe57] text-white rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-200">
+  <svg class="w-7 h-7" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+    <path d="M19.11 17.39c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.14-.42-2.18-1.34-.81-.72-1.36-1.61-1.52-1.88-.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.64 1.11 2.82c.14.18 1.93 2.95 4.67 4.14.65.28 1.16.45 1.56.58.66.21 1.26.18 1.74.11.53-.08 1.61-.66 1.84-1.29.23-.63.23-1.17.16-1.29-.07-.12-.25-.2-.52-.34z"/>
+    <path d="M26.67 5.33C23.92 2.58 20.27 1.07 16.4 1.07 8.67 1.07 2.4 7.34 2.4 15.07c0 2.46.64 4.87 1.86 6.99L2.27 30.93l9.09-1.95c2.05 1.12 4.37 1.71 6.74 1.71h.01c7.73 0 14-6.27 14-14 0-3.87-1.51-7.52-4.44-10.36zM18.1 28.15h-.01c-2.1 0-4.16-.56-5.97-1.62l-.43-.25-5.39 1.16 1.14-5.25-.28-.45c-1.17-1.85-1.79-3.99-1.79-6.17 0-6.46 5.26-11.72 11.73-11.72 3.14 0 6.09 1.22 8.31 3.44 2.22 2.22 3.44 5.17 3.44 8.31 0 6.46-5.26 11.72-11.75 11.72z"/>
+  </svg>
+</a>
+
+{% endblock %}

@@ -58,5 +58,39 @@ def csr():
     return render_template("pages/about/csr.html")
 
 
+# ---------------------------------------------------------------------------
+# Innovation section routes
+# ---------------------------------------------------------------------------
+
+@app.route("/innovation/applied-research")
+def applied_research():
+    return render_template("pages/innovation/applied-research.html")
+
+
+@app.route("/innovation/phytochemical-understanding")
+def phytochemical_understanding():
+    return render_template("pages/innovation/phytochemical-understanding.html")
+
+
+@app.route("/innovation/product-development-framework")
+def product_development_framework():
+    return render_template("pages/innovation/product-development-framework.html")
+
+
+@app.route("/innovation/formulation-application-insights")
+def formulation_application_insights():
+    return render_template("pages/innovation/formulation-application-insights.html")
+
+
+@app.route("/innovation/quality-systems-ci")
+def quality_systems_ci():
+    return render_template("pages/innovation/quality-systems-ci.html")
+
+
+@app.route("/innovation/future-readiness")
+def future_readiness():
+    return render_template("pages/innovation/future-readiness.html")
+
+
 if __name__ == "__main__":
     app.run(debug=os.environ.get("DEBUG", "true").lower() == "true")
