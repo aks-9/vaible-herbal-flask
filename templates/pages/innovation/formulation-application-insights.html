@@ -1,0 +1,188 @@
+{% extends "base.html" %}
+
+{% block title %}Formulation &amp; Application Insights | Vaible Herbal{% endblock %}
+
+{% block head %}
+<meta name="description" content="Formulation and application insights from Vaible Herbal — solubility, stability, compatibility and dosage guidance for herbal extracts in nutraceutical, cosmetic and pharmaceutical applications." />
+<link rel="canonical" href="https://www.vaibleherbal.in/innovation/formulation-application-insights" />
+<meta property="og:type"        content="website" />
+<meta property="og:title"       content="Formulation &amp; Application Insights | Vaible Herbal" />
+<meta property="og:description" content="Practical guidance on solubility, stability, compatibility and dosage for herbal extracts in nutraceutical, cosmetic and pharmaceutical products." />
+<meta property="og:url"         content="https://www.vaibleherbal.in/innovation/formulation-application-insights" />
+<meta property="og:image"       content="https://www.vaibleherbal.in/static/images/hero/slide1.jpg" />
+<meta property="og:site_name"   content="Vaible Herbal" />
+{% endblock %}
+
+{% block content %}
+
+{# ================================================================
+   PAGE HERO
+   ================================================================ #}
+<section class="bg-brand-900 dark:bg-gray-950 text-white">
+  <div class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-brand-800 via-brand-900 to-gray-900 opacity-90" aria-hidden="true"></div>
+    <div class="relative container-main py-16 lg:py-24">
+
+      <nav aria-label="Breadcrumb" class="mb-6">
+        <ol class="flex items-center gap-1.5 text-xs text-brand-300/80">
+          <li><a href="{{ url_for('index') }}" class="hover:text-brand-200 transition-colors">Home</a></li>
+          <li aria-hidden="true"><svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></li>
+          <li class="text-brand-200">Innovation</li>
+          <li aria-hidden="true"><svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></li>
+          <li class="text-white font-medium" aria-current="page">Formulation &amp; Application Insights</li>
+        </ol>
+      </nav>
+
+      <div class="max-w-2xl">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-300 mb-3">Innovation</p>
+        <h1 class="font-display text-4xl sm:text-5xl font-bold leading-tight mb-5">
+          Formulation &amp; Application<br>Insights
+        </h1>
+        <p class="text-base sm:text-lg text-white/75 leading-relaxed">
+          Practical guidance on solubility, stability, compatibility, and dosage behaviour
+          of herbal extracts — so our buyers can formulate with confidence.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{# ================================================================
+   INTRO
+   ================================================================ #}
+<section class="py-16 lg:py-20 bg-white dark:bg-gray-900">
+  <div class="container-main">
+    <div class="max-w-3xl">
+      <p class="text-xs font-semibold uppercase tracking-widest text-brand-700 dark:text-brand-400 mb-3">Why This Matters</p>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-6">
+        Supplying an Ingredient Is Not Enough
+      </h2>
+      <div class="space-y-4 text-gray-600 dark:text-gray-400 leading-relaxed">
+        <p>
+          A herbal extract on a COA is a starting point, not a guarantee of formulation success.
+          How a dry extract disperses in a capsule matrix, how a liquid extract behaves in a
+          cosmetic emulsion, how an essential oil interacts with carrier systems — these are
+          questions our B2B buyers need answers to before they commit to a formulation.
+        </p>
+        <p>
+          At Vaible Herbal, we document and share what we know about the application behaviour of
+          the ingredients we supply — so formulation teams can make faster, better-informed
+          decisions about ingredient selection and use levels.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{# ================================================================
+   KEY FORMULATION PARAMETERS
+   ================================================================ #}
+<section class="py-16 lg:py-20 bg-gray-50 dark:bg-gray-950">
+  <div class="container-main">
+
+    <div class="text-center mb-12">
+      <p class="text-xs font-semibold uppercase tracking-widest text-brand-700 dark:text-brand-400 mb-2">Formulation Factors</p>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+        What We Document for Every Ingredient
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {% set params = [
+        ('Solubility Profile', 'Water solubility, ethanol solubility, oil miscibility — with notes on concentration limits and clarity in solution.'),
+        ('Stability Window', 'pH range, temperature limits, light sensitivity, and shelf-life expectations under defined storage conditions.'),
+        ('Compatibility Notes', 'Known interactions with common excipients, preservatives, emulsifiers, and co-ingredients that affect colour, clarity, or potency.'),
+        ('Recommended Use Levels', 'Indicative dosage ranges by application type — nutraceutical, topical, food — based on traditional use and published literature.'),
+        ('Organoleptic Profile', 'Colour, odour, and taste characteristics that affect final product acceptability and masking requirements.'),
+        ('Hygroscopicity', 'Moisture absorption behaviour for dry extracts — critical for capsule and tablet formulation, packaging selection, and storage.'),
+      ] %}
+      {% for title, desc in params %}
+      <article class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 p-6 shadow-sm">
+        <h3 class="font-semibold text-gray-900 dark:text-white mb-2 text-sm">{{ title }}</h3>
+        <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">{{ desc }}</p>
+      </article>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+
+
+{# ================================================================
+   APPLICATION SECTORS
+   ================================================================ #}
+<section class="py-16 lg:py-20 bg-white dark:bg-gray-900">
+  <div class="container-main">
+
+    <div class="text-center mb-12">
+      <p class="text-xs font-semibold uppercase tracking-widest text-brand-700 dark:text-brand-400 mb-2">By Application</p>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+        Sector-Specific Considerations
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+      {% set sectors = [
+        ('Nutraceuticals',
+         'Capsules, tablets, sachets, softgels',
+         ['Flowability and bulk density for capsule fill', 'Hygroscopicity control for tablet compression', 'Disintegration and bioavailability considerations', 'Stability in finished dosage form', 'Label claim compliance (standardised marker %)']),
+        ('Cosmetics &amp; Personal Care',
+         'Serums, creams, toners, hair care',
+         ['Water/oil phase compatibility for emulsions', 'Preservative system compatibility', 'Colour and odour impact on finished product', 'Skin penetration and delivery system compatibility', 'Regulatory status for intended market (EU, US, India)']),
+        ('Pharmaceuticals &amp; Food',
+         'OTC products, functional foods, beverages',
+         ['Pharmacopeial compliance requirements', 'GMP documentation and batch traceability', 'Microbial limits for intended use', 'Solubility for liquid product incorporation', 'Interaction with active pharmaceutical ingredients']),
+      ] %}
+      {% for sector, subtitle, bullets in sectors %}
+      <article class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-7">
+        <p class="text-xs font-bold uppercase tracking-widest text-brand-700 dark:text-brand-400 mb-1">Application</p>
+        <h3 class="font-display text-xl font-bold text-gray-900 dark:text-white mb-1">{{ sector }}</h3>
+        <p class="text-xs text-gray-500 dark:text-gray-400 mb-5 italic">{{ subtitle }}</p>
+        <ul class="space-y-2">
+          {% for bullet in bullets %}
+          <li class="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400">
+            <svg class="w-4 h-4 text-brand-600 dark:text-brand-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+            </svg>
+            {{ bullet }}
+          </li>
+          {% endfor %}
+        </ul>
+      </article>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+
+
+{# ================================================================
+   CTA
+   ================================================================ #}
+<section class="py-16 bg-gray-50 dark:bg-gray-950">
+  <div class="container-main">
+    <div class="rounded-2xl bg-brand-800 dark:bg-brand-900 px-8 py-10 text-center text-white">
+      <h3 class="font-display text-2xl sm:text-3xl font-bold mb-3">Formulation Question?</h3>
+      <p class="text-white/75 max-w-xl mx-auto mb-7 text-sm leading-relaxed">
+        Tell us the ingredient, the application, and the challenge. We will share what we know about how it behaves in that context.
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <a href="#" class="inline-flex items-center justify-center bg-white text-brand-800 text-sm font-semibold px-7 py-3 rounded-lg shadow hover:bg-brand-50 transition-colors duration-200">Ask a Technical Question</a>
+        <a href="{{ url_for('products') }}" class="inline-flex items-center justify-center border border-white/40 text-white text-sm font-semibold px-7 py-3 rounded-lg hover:bg-white/10 transition-colors duration-200">Browse Ingredients</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<a href="https://wa.me/919911154497?text=Hi%20Vaible%20Herbal%2C%20I%20want%20to%20enquire%20about%20your%20products."
+   target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" title="Chat on WhatsApp"
+   class="fixed bottom-6 right-5 z-50 w-14 h-14 flex items-center justify-center bg-[#25D366] hover:bg-[#1ebe57] text-white rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-200">
+  <svg class="w-7 h-7" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+    <path d="M19.11 17.39c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.14-.42-2.18-1.34-.81-.72-1.36-1.61-1.52-1.88-.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.64 1.11 2.82c.14.18 1.93 2.95 4.67 4.14.65.28 1.16.45 1.56.58.66.21 1.26.18 1.74.11.53-.08 1.61-.66 1.84-1.29.23-.63.23-1.17.16-1.29-.07-.12-.25-.2-.52-.34z"/>
+    <path d="M26.67 5.33C23.92 2.58 20.27 1.07 16.4 1.07 8.67 1.07 2.4 7.34 2.4 15.07c0 2.46.64 4.87 1.86 6.99L2.27 30.93l9.09-1.95c2.05 1.12 4.37 1.71 6.74 1.71h.01c7.73 0 14-6.27 14-14 0-3.87-1.51-7.52-4.44-10.36zM18.1 28.15h-.01c-2.1 0-4.16-.56-5.97-1.62l-.43-.25-5.39 1.16 1.14-5.25-.28-.45c-1.17-1.85-1.79-3.99-1.79-6.17 0-6.46 5.26-11.72 11.73-11.72 3.14 0 6.09 1.22 8.31 3.44 2.22 2.22 3.44 5.17 3.44 8.31 0 6.46-5.26 11.72-11.75 11.72z"/>
+  </svg>
+</a>
+
+{% endblock %}
