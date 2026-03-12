@@ -92,5 +92,35 @@ def future_readiness():
     return render_template("pages/innovation/future-readiness.html")
 
 
+# ---------------------------------------------------------------------------
+# Resources section routes
+# ---------------------------------------------------------------------------
+
+@app.route("/resources/news-blogs")
+def news_blogs():
+    from data.blog_posts import get_all_posts
+    return render_template("pages/resources/news-blogs.html", posts=get_all_posts())
+
+
+@app.route("/resources/webinar")
+def webinar():
+    return render_template("pages/resources/webinar.html")
+
+
+@app.route("/resources/events")
+def events():
+    return render_template("pages/resources/events.html")
+
+
+@app.route("/resources/career")
+def career():
+    return render_template("pages/resources/career.html")
+
+
+@app.route("/resources/brochure")
+def brochure():
+    return render_template("pages/resources/brochure.html")
+
+
 if __name__ == "__main__":
     app.run(debug=os.environ.get("DEBUG", "true").lower() == "true")

@@ -1,0 +1,398 @@
+{% extends "base.html" %}
+
+{% block title %}Webinars | Vaible Herbal{% endblock %}
+
+{% block head %}
+<meta name="description" content="Vaible Herbal webinars on herbal ingredient quality, COA evaluation, extraction science, regulatory documentation, and global compliance — free to attend." />
+<link rel="canonical" href="https://www.vaibleherbal.in/resources/webinar" />
+<meta property="og:type"        content="website" />
+<meta property="og:title"       content="Webinars | Vaible Herbal" />
+<meta property="og:description" content="Free webinars for herbal ingredient buyers — regulatory frameworks, quality documentation, extraction science, and COA evaluation from Vaible Herbal." />
+<meta property="og:url"         content="https://www.vaibleherbal.in/resources/webinar" />
+<meta property="og:image"       content="https://www.vaibleherbal.in/static/images/hero/slide1.jpg" />
+<meta property="og:site_name"   content="Vaible Herbal" />
+{% endblock %}
+
+{% block content %}
+
+{# ================================================================
+   PAGE HERO
+   ================================================================ #}
+<section class="bg-brand-900 dark:bg-gray-950 text-white" aria-label="Webinars page header">
+  <div class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-brand-800 via-brand-900 to-gray-900 opacity-90"
+         aria-hidden="true"></div>
+    <div class="relative container-main py-16 lg:py-24">
+
+      <nav aria-label="Breadcrumb" class="mb-6">
+        <ol class="flex items-center gap-1.5 text-xs text-brand-300/80">
+          <li><a href="{{ url_for('index') }}" class="hover:text-brand-200 transition-colors">Home</a></li>
+          <li aria-hidden="true"><svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></li>
+          <li class="text-brand-200">Resources</li>
+          <li aria-hidden="true"><svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></li>
+          <li class="text-white font-medium" aria-current="page">Webinars</li>
+        </ol>
+      </nav>
+
+      <div class="max-w-2xl">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-300 mb-3">Resources</p>
+        <h1 class="font-display text-4xl sm:text-5xl font-bold leading-tight mb-5">
+          Vaible Herbal Webinars
+        </h1>
+        <p class="text-base sm:text-lg text-white/75 leading-relaxed">
+          Regulatory-first insights on herbal ingredients — extraction, quality control,
+          documentation, stability, and global compliance.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+{# ================================================================
+   FEATURED WEBINAR
+   ================================================================ #}
+<section class="py-16 lg:py-20 bg-brand-50 dark:bg-gray-800">
+  <div class="container-main">
+
+    <div class="text-center mb-10">
+      <p class="text-xs font-semibold uppercase tracking-widest text-brand-700 dark:text-brand-400 mb-2">Next Session</p>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">
+        Featured Webinar
+      </h2>
+    </div>
+
+    <div class="bg-white dark:bg-gray-900 rounded-2xl border border-brand-100 dark:border-brand-900/40 shadow-sm overflow-hidden max-w-3xl mx-auto">
+      <div class="bg-brand-700 px-6 py-4 flex items-center gap-3">
+        <span class="bg-white text-brand-700 text-xs font-bold px-2.5 py-1 rounded-full">LIVE</span>
+        <span class="bg-brand-600 text-white text-xs font-semibold px-2.5 py-1 rounded-full">Quality</span>
+        <span class="bg-brand-600 text-white text-xs font-semibold px-2.5 py-1 rounded-full">Documentation</span>
+      </div>
+      <div class="p-8">
+        <h3 class="font-display text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4">
+          Building Export-Ready Herbal Specifications (IP/USP/EP mindset)
+        </h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
+          This session walks through how to build specification sheets that satisfy regulatory expectations
+          in major export markets — with reference to IP, USP, and EP frameworks. Covers test method
+          selection, acceptance criteria, format requirements, and common gaps that delay import clearance.
+        </p>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
+          {% set details = [
+            ('Date', '12 Feb 2026'),
+            ('Time', '6:00 PM IST'),
+            ('Duration', '45 min + Q&amp;A'),
+            ('Seats', 'Limited / Free'),
+          ] %}
+          {% for label, val in details %}
+          <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-3 text-center">
+            <p class="text-xs text-gray-400 mb-1">{{ label }}</p>
+            <p class="text-sm font-semibold text-gray-900 dark:text-white">{{ val }}</p>
+          </div>
+          {% endfor %}
+        </div>
+        <button type="button"
+                data-webinar-title="Building Export-Ready Herbal Specifications (IP/USP/EP mindset)"
+                onclick="openWebinarModal(this.dataset.webinarTitle)"
+                class="bg-brand-700 text-white hover:bg-brand-800 px-6 py-2.5 rounded-lg text-sm font-medium transition-colors">
+          Register for Free
+        </button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+{# ================================================================
+   WHY ATTEND
+   ================================================================ #}
+<section class="py-16 lg:py-20 bg-white dark:bg-gray-900">
+  <div class="container-main">
+
+    <div class="text-center mb-10">
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+        Why Attend
+      </h2>
+      <p class="text-gray-500 dark:text-gray-400 max-w-xl mx-auto text-sm">
+        Sessions are designed for QC managers, procurement leads, and formulation teams
+        working with herbal ingredients in regulated markets.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+      {% set benefits = [
+        ('Compliance-first frameworks', 'Understand what regulators in EU, US, and India actually look for in supplier documentation — and how to build against those requirements.'),
+        ('Better supplier evaluation', 'Learn to ask the right questions when qualifying a new herbal ingredient supplier, and what red flags in a COA or specification look like.'),
+        ('QC &amp; lab alignment', 'Align your incoming quality control process with the testing methods and acceptance criteria your suppliers use — reducing disputes and rejections.'),
+        ('Formulation insights', 'Understand how extraction method, carrier, and concentration affect your formulation outcome — with input from the ingredient supply side.'),
+      ] %}
+      {% for title, desc in benefits %}
+      <div class="flex gap-4 bg-gray-50 dark:bg-gray-800 rounded-xl p-5">
+        <div class="w-8 h-8 bg-brand-100 dark:bg-brand-900/40 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
+          <svg class="w-4 h-4 text-brand-700 dark:text-brand-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+          </svg>
+        </div>
+        <div>
+          <h3 class="font-semibold text-gray-900 dark:text-white text-sm mb-1">{{ title }}</h3>
+          <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">{{ desc }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+
+
+{# ================================================================
+   UPCOMING WEBINARS
+   ================================================================ #}
+<section class="py-16 lg:py-20 bg-gray-50 dark:bg-gray-950">
+  <div class="container-main">
+
+    <div class="text-center mb-10">
+      <p class="text-xs font-semibold uppercase tracking-widest text-brand-700 dark:text-brand-400 mb-2">Coming Up</p>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">
+        Upcoming Webinars
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      {% set upcoming = [
+        ('Heavy Metals &amp; Micro Limits: How Buyers Evaluate COAs', '18 Feb 2026', '6:00 PM IST', 'Quality'),
+        ('Dry Extracts: Solvent Selection, Concentration &amp; Standardization', '22 Feb 2026', '6:00 PM IST', 'Extraction'),
+        ('Global Documentation: Specs, COA, SDS, Allergen &amp; Non-GMO Statements', '26 Feb 2026', '6:00 PM IST', 'Regulatory'),
+        ('Carrier Oils: Selection, Oxidation, Storage &amp; Sensory Considerations', '02 Mar 2026', '6:00 PM IST', 'Formulation'),
+      ] %}
+      {% for title, date, time, tag in upcoming %}
+      <article class="bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-6 shadow-sm">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="bg-brand-50 dark:bg-brand-900/30 text-brand-700 dark:text-brand-400 text-xs font-bold px-2 py-0.5 rounded-full">LIVE</span>
+          <span class="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-xs font-semibold px-2 py-0.5 rounded-full">{{ tag }}</span>
+        </div>
+        <h3 class="font-semibold text-gray-900 dark:text-white text-sm leading-snug mb-3">{{ title }}</h3>
+        <div class="flex items-center gap-4 text-xs text-gray-400 mb-4">
+          <span>{{ date }}</span>
+          <span>{{ time }}</span>
+        </div>
+        <button type="button"
+                data-webinar-title="{{ title }}"
+                onclick="openWebinarModal(this.dataset.webinarTitle)"
+                class="border border-brand-700 text-brand-700 hover:bg-brand-50 dark:hover:bg-brand-900/20 px-4 py-1.5 rounded-lg text-xs font-medium transition-colors">
+          Register
+        </button>
+      </article>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+
+
+{# ================================================================
+   ON-DEMAND
+   ================================================================ #}
+<section class="py-16 lg:py-20 bg-white dark:bg-gray-900">
+  <div class="container-main">
+
+    <div class="text-center mb-10">
+      <p class="text-xs font-semibold uppercase tracking-widest text-brand-700 dark:text-brand-400 mb-2">Watch Anytime</p>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">
+        On-Demand Sessions
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+      {% set ondemand = [
+        ('Essential Oils: Identity, Adulteration Clues &amp; GC Basics', 'A practical guide to authenticating essential oils — understanding GC-MS reports, typical adulteration patterns, and what to look for in a supplier COA.', '38 min'),
+        ('How to Read a COA Like a Buyer (fast evaluation checklist)', 'A step-by-step walkthrough of a sample herbal extract COA — identifying the critical fields, spotting gaps, and what to request when the document is incomplete.', '24 min'),
+      ] %}
+      {% for title, desc, duration in ondemand %}
+      <article class="bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700 p-6">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300 text-xs font-semibold px-2.5 py-1 rounded-full">On-Demand</span>
+          <span class="text-xs text-gray-400">{{ duration }}</span>
+        </div>
+        <h3 class="font-semibold text-gray-900 dark:text-white text-sm leading-snug mb-2">{{ title }}</h3>
+        <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">{{ desc }}</p>
+      </article>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+
+
+{# ================================================================
+   FAQ ACCORDION
+   ================================================================ #}
+<section class="py-16 lg:py-20 bg-gray-50 dark:bg-gray-950">
+  <div class="container-main max-w-2xl">
+
+    <div class="text-center mb-10">
+      <h2 class="font-display text-3xl font-bold text-gray-900 dark:text-white">
+        Frequently Asked Questions
+      </h2>
+    </div>
+
+    {% set faqs = [
+      ('Is registration free?', 'Yes, all Vaible Herbal webinars are free to attend. Registration is required to receive the join link and any session materials.'),
+      ('Will I get a recording?', 'Registered attendees receive a recording link within 48 hours of the session. On-demand recordings are available for previous sessions.'),
+      ('Can I request a topic?', 'Yes. Use the contact form below or email us directly with your topic suggestion. We prioritise topics based on the frequency of buyer requests.'),
+    ] %}
+    <div class="space-y-3">
+      {% for question, answer in faqs %}
+      <div class="bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden">
+        <button type="button" data-faq-btn
+                class="w-full text-left px-6 py-4 flex items-center justify-between gap-4
+                       font-medium text-gray-900 dark:text-white text-sm
+                       hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+          {{ question }}
+          <svg class="w-4 h-4 text-gray-400 shrink-0 transition-transform duration-200"
+               fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div data-faq-panel class="hidden px-6 pb-5 text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+          {{ answer }}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+
+
+{# ================================================================
+   CTA STRIP
+   ================================================================ #}
+<section class="py-16 bg-white dark:bg-gray-900">
+  <div class="container-main">
+    <div class="rounded-2xl bg-brand-800 dark:bg-brand-900 px-8 py-10 text-center text-white">
+      <h3 class="font-display text-2xl sm:text-3xl font-bold mb-3">
+        Want a webinar on a specific ingredient or QC topic?
+      </h3>
+      <p class="text-white/75 max-w-xl mx-auto mb-7 text-sm leading-relaxed">
+        We run sessions based on what buyers actually need to know. Send us your question or topic
+        and we'll schedule a dedicated session.
+      </p>
+      <a href="#" class="inline-flex items-center justify-center bg-white text-brand-800 text-sm font-semibold px-7 py-3 rounded-lg shadow hover:bg-brand-50 transition-colors duration-200">
+        Contact Us
+      </a>
+    </div>
+  </div>
+</section>
+
+
+{# ================================================================
+   REGISTER MODAL
+   ================================================================ #}
+<div id="webinarModal"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="webinarModalTitle"
+     class="hidden fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4">
+
+  <div class="bg-white dark:bg-gray-900 rounded-2xl max-w-md w-full p-8 relative shadow-2xl">
+    <button type="button" onclick="closeWebinarModal()" aria-label="Close registration form"
+            class="absolute top-4 right-4 p-2 rounded-lg text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+
+    <h2 id="webinarModalTitle" class="font-display text-xl font-bold text-gray-900 dark:text-white mb-2">
+      Register for Webinar
+    </h2>
+    <p id="webinarModalSubtitle" class="text-xs text-gray-400 mb-6"></p>
+
+    <form id="webinarRegForm" onsubmit="submitWebinarReg(event)">
+      <div class="space-y-4">
+        <div>
+          <label for="wbName" class="block text-xs font-medium text-gray-700 dark:text-gray-300 mb-1.5">Full Name *</label>
+          <input id="wbName" type="text" required placeholder="Your name"
+                 class="w-full px-3 py-2.5 text-sm border border-gray-200 dark:border-gray-700 rounded-lg
+                        bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100
+                        focus:outline-none focus:ring-2 focus:ring-brand-500"/>
+        </div>
+        <div>
+          <label for="wbEmail" class="block text-xs font-medium text-gray-700 dark:text-gray-300 mb-1.5">Work Email *</label>
+          <input id="wbEmail" type="email" required placeholder="you@company.com"
+                 class="w-full px-3 py-2.5 text-sm border border-gray-200 dark:border-gray-700 rounded-lg
+                        bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100
+                        focus:outline-none focus:ring-2 focus:ring-brand-500"/>
+        </div>
+        <div>
+          <label for="wbCompany" class="block text-xs font-medium text-gray-700 dark:text-gray-300 mb-1.5">Company (optional)</label>
+          <input id="wbCompany" type="text" placeholder="Company name"
+                 class="w-full px-3 py-2.5 text-sm border border-gray-200 dark:border-gray-700 rounded-lg
+                        bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100
+                        focus:outline-none focus:ring-2 focus:ring-brand-500"/>
+        </div>
+      </div>
+      <button type="submit"
+              class="mt-6 w-full bg-brand-700 text-white hover:bg-brand-800 py-2.5 rounded-lg text-sm font-medium transition-colors">
+        Confirm Registration
+      </button>
+    </form>
+  </div>
+</div>
+
+
+{# WhatsApp float #}
+<a href="https://wa.me/919911154497?text=Hi%20Vaible%20Herbal%2C%20I%20want%20to%20enquire%20about%20your%20products."
+   target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" title="Chat on WhatsApp"
+   class="fixed bottom-6 right-5 z-50 w-14 h-14 flex items-center justify-center bg-[#25D366] hover:bg-[#1ebe57] text-white rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-200">
+  <svg class="w-7 h-7" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+    <path d="M19.11 17.39c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.14-.42-2.18-1.34-.81-.72-1.36-1.61-1.52-1.88-.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.64 1.11 2.82c.14.18 1.93 2.95 4.67 4.14.65.28 1.16.45 1.56.58.66.21 1.26.18 1.74.11.53-.08 1.61-.66 1.84-1.29.23-.63.23-1.17.16-1.29-.07-.12-.25-.2-.52-.34z"/>
+    <path d="M26.67 5.33C23.92 2.58 20.27 1.07 16.4 1.07 8.67 1.07 2.4 7.34 2.4 15.07c0 2.46.64 4.87 1.86 6.99L2.27 30.93l9.09-1.95c2.05 1.12 4.37 1.71 6.74 1.71h.01c7.73 0 14-6.27 14-14 0-3.87-1.51-7.52-4.44-10.36zM18.1 28.15h-.01c-2.1 0-4.16-.56-5.97-1.62l-.43-.25-5.39 1.16 1.14-5.25-.28-.45c-1.17-1.85-1.79-3.99-1.79-6.17 0-6.46 5.26-11.72 11.73-11.72 3.14 0 6.09 1.22 8.31 3.44 2.22 2.22 3.44 5.17 3.44 8.31 0 6.46-5.26 11.72-11.75 11.72z"/>
+  </svg>
+</a>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+  // Webinar modal
+  function openWebinarModal(title) {
+    document.getElementById('webinarModalSubtitle').textContent = title || '';
+    const modal = document.getElementById('webinarModal');
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeWebinarModal() {
+    document.getElementById('webinarModal').classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+  function submitWebinarReg(e) {
+    e.preventDefault();
+    closeWebinarModal();
+    alert('Registration confirmed! You will receive a join link by email.');
+  }
+
+  // Close on backdrop click
+  document.getElementById('webinarModal').addEventListener('click', function(e) {
+    if (e.target === this) closeWebinarModal();
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('[data-faq-btn]').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      const panel = this.parentElement.querySelector('[data-faq-panel]');
+      const chevron = this.querySelector('svg');
+      const isOpen = !panel.classList.contains('hidden');
+      panel.classList.toggle('hidden', isOpen);
+      if (chevron) chevron.style.transform = isOpen ? '' : 'rotate(180deg)';
+    });
+  });
+
+  // ESC closes webinar modal
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeWebinarModal();
+  });
+</script>
+{% endblock %}

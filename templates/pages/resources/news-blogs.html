@@ -1,0 +1,200 @@
+{% extends "base.html" %}
+
+{% block title %}News &amp; Blogs | Vaible Herbal{% endblock %}
+
+{% block head %}
+<meta name="description" content="Insights for B2B herbal ingredient buyers — COA evaluation, extraction science, regulatory compliance, traceability, and sustainable sourcing from Vaible Herbal." />
+<link rel="canonical" href="https://www.vaibleherbal.in/resources/news-blogs" />
+<meta property="og:type"        content="website" />
+<meta property="og:title"       content="News &amp; Blogs | Vaible Herbal" />
+<meta property="og:description" content="Practical knowledge for herbal ingredient buyers — quality systems, analytical testing, regulatory updates, and process insights from the Vaible Herbal team." />
+<meta property="og:url"         content="https://www.vaibleherbal.in/resources/news-blogs" />
+<meta property="og:image"       content="https://www.vaibleherbal.in/static/images/hero/slide1.jpg" />
+<meta property="og:site_name"   content="Vaible Herbal" />
+{% endblock %}
+
+{% block content %}
+
+{# ================================================================
+   POSTS DATA (injected server-side as JSON for JS)
+   ================================================================ #}
+<script id="nbData" type="application/json">{{ posts | tojson }}</script>
+
+{# ================================================================
+   PAGE HERO
+   ================================================================ #}
+<section class="bg-brand-900 dark:bg-gray-950 text-white" aria-label="News and Blogs page header">
+  <div class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-brand-800 via-brand-900 to-gray-900 opacity-90"
+         aria-hidden="true"></div>
+    <div class="relative container-main py-16 lg:py-24">
+
+      <nav aria-label="Breadcrumb" class="mb-6">
+        <ol class="flex items-center gap-1.5 text-xs text-brand-300/80">
+          <li><a href="{{ url_for('index') }}" class="hover:text-brand-200 transition-colors">Home</a></li>
+          <li aria-hidden="true"><svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></li>
+          <li class="text-brand-200">Resources</li>
+          <li aria-hidden="true"><svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></li>
+          <li class="text-white font-medium" aria-current="page">News &amp; Blogs</li>
+        </ol>
+      </nav>
+
+      <div class="max-w-2xl">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-300 mb-3">Resources</p>
+        <h1 class="font-display text-4xl sm:text-5xl font-bold leading-tight mb-5">
+          News &amp; Blogs
+        </h1>
+        <p class="text-base sm:text-lg text-white/75 leading-relaxed mb-8">
+          Practical knowledge for herbal ingredient buyers — COA evaluation, extraction science,
+          regulatory compliance, traceability, and quality systems.
+        </p>
+
+        {# Category pills #}
+        <div id="nbPills" class="flex flex-wrap gap-2" role="group" aria-label="Filter by category">
+          <button data-cat="all"
+                  class="px-4 py-1.5 rounded-full text-xs font-semibold border transition-colors duration-150">
+            All
+          </button>
+          <button data-cat="quality-systems"
+                  class="px-4 py-1.5 rounded-full text-xs font-semibold border transition-colors duration-150">
+            Quality Systems
+          </button>
+          <button data-cat="process"
+                  class="px-4 py-1.5 rounded-full text-xs font-semibold border transition-colors duration-150">
+            Process &amp; Manufacturing
+          </button>
+          <button data-cat="analytical"
+                  class="px-4 py-1.5 rounded-full text-xs font-semibold border transition-colors duration-150">
+            Analytical
+          </button>
+          <button data-cat="regulatory"
+                  class="px-4 py-1.5 rounded-full text-xs font-semibold border transition-colors duration-150">
+            Regulatory
+          </button>
+          <button data-cat="sustainability"
+                  class="px-4 py-1.5 rounded-full text-xs font-semibold border transition-colors duration-150">
+            Sustainability
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+{# ================================================================
+   SEARCH + SORT CONTROLS
+   ================================================================ #}
+<section class="bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800 py-5">
+  <div class="container-main">
+    <div class="flex flex-col sm:flex-row gap-3 items-start sm:items-center justify-between">
+
+      <div class="relative w-full sm:max-w-sm">
+        <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none"
+             fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round"
+                d="M21 21l-4.35-4.35M17 11A6 6 0 105 11a6 6 0 0012 0z"/>
+        </svg>
+        <input id="nbSearch" type="search" placeholder="Search posts, topics, tags…"
+               aria-label="Search blog posts"
+               class="w-full pl-9 pr-4 py-2.5 text-sm border border-gray-200 dark:border-gray-700
+                      rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100
+                      placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent" />
+      </div>
+
+      <div class="flex gap-3 items-center">
+
+        <select id="nbCategory" aria-label="Filter by category"
+                class="text-sm border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2.5
+                       bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300
+                       focus:outline-none focus:ring-2 focus:ring-brand-500">
+          <option value="all">All Categories</option>
+          <option value="quality-systems">Quality Systems</option>
+          <option value="process">Process &amp; Manufacturing</option>
+          <option value="analytical">Analytical</option>
+          <option value="regulatory">Regulatory</option>
+          <option value="sustainability">Sustainability</option>
+        </select>
+
+        <select id="nbSort" aria-label="Sort posts"
+                class="text-sm border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2.5
+                       bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300
+                       focus:outline-none focus:ring-2 focus:ring-brand-500">
+          <option value="newest">Newest First</option>
+          <option value="oldest">Oldest First</option>
+          <option value="title-az">Title A–Z</option>
+          <option value="title-za">Title Z–A</option>
+        </select>
+
+      </div>
+    </div>
+
+    <p id="nbStats" class="text-xs text-gray-400 mt-2"></p>
+  </div>
+</section>
+
+
+{# ================================================================
+   POSTS GRID
+   ================================================================ #}
+<section class="py-12 lg:py-16 bg-gray-50 dark:bg-gray-950">
+  <div class="container-main">
+
+    <div id="nbGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {# Populated by news-blogs.js #}
+    </div>
+
+    <div id="nbEmpty" class="hidden text-center py-16">
+      <p class="text-gray-500 dark:text-gray-400 text-base">No posts match your search. Try a different keyword or category.</p>
+    </div>
+
+  </div>
+</section>
+
+
+{# ================================================================
+   MODAL
+   ================================================================ #}
+<div id="nbOverlay"
+     role="dialog"
+     aria-modal="true"
+     aria-label="Blog post"
+     class="hidden fixed inset-0 z-50 bg-black/50 items-center justify-center p-4">
+
+  <div id="nbModal"
+       class="bg-white dark:bg-gray-900 rounded-2xl max-w-2xl w-full mx-4
+              max-h-[85vh] overflow-y-auto p-6 relative shadow-2xl">
+
+    <button id="nbClose" type="button" aria-label="Close post"
+            class="absolute top-4 right-4 p-2 rounded-lg text-gray-400
+                   hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2"
+           viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+
+    <div id="nbModalMeta" class="flex items-center gap-2 mb-4"></div>
+    <h2 id="nbModalTitle" class="font-display text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-5"></h2>
+    <div id="nbModalBody"></div>
+
+  </div>
+</div>
+
+
+{# WhatsApp float #}
+<a href="https://wa.me/919911154497?text=Hi%20Vaible%20Herbal%2C%20I%20want%20to%20enquire%20about%20your%20products."
+   target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" title="Chat on WhatsApp"
+   class="fixed bottom-6 right-5 z-50 w-14 h-14 flex items-center justify-center bg-[#25D366] hover:bg-[#1ebe57] text-white rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-200">
+  <svg class="w-7 h-7" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+    <path d="M19.11 17.39c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.14-.42-2.18-1.34-.81-.72-1.36-1.61-1.52-1.88-.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.64 1.11 2.82c.14.18 1.93 2.95 4.67 4.14.65.28 1.16.45 1.56.58.66.21 1.26.18 1.74.11.53-.08 1.61-.66 1.84-1.29.23-.63.23-1.17.16-1.29-.07-.12-.25-.2-.52-.34z"/>
+    <path d="M26.67 5.33C23.92 2.58 20.27 1.07 16.4 1.07 8.67 1.07 2.4 7.34 2.4 15.07c0 2.46.64 4.87 1.86 6.99L2.27 30.93l9.09-1.95c2.05 1.12 4.37 1.71 6.74 1.71h.01c7.73 0 14-6.27 14-14 0-3.87-1.51-7.52-4.44-10.36zM18.1 28.15h-.01c-2.1 0-4.16-.56-5.97-1.62l-.43-.25-5.39 1.16 1.14-5.25-.28-.45c-1.17-1.85-1.79-3.99-1.79-6.17 0-6.46 5.26-11.72 11.73-11.72 3.14 0 6.09 1.22 8.31 3.44 2.22 2.22 3.44 5.17 3.44 8.31 0 6.46-5.26 11.72-11.75 11.72z"/>
+  </svg>
+</a>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/news-blogs.js') }}"></script>
+{% endblock %}
