@@ -1,0 +1,283 @@
+{% extends "base.html" %}
+
+{% block title %}Events | Vaible Herbal{% endblock %}
+
+{% block head %}
+<meta name="description" content="Meet Vaible Herbal at exhibitions, conferences, and buyer meetings across India, Middle East, Europe, and the USA. Plan your sourcing conversations in advance." />
+<link rel="canonical" href="https://www.vaibleherbal.in/resources/events" />
+<meta property="og:type"        content="website" />
+<meta property="og:title"       content="Events | Vaible Herbal" />
+<meta property="og:description" content="Find Vaible Herbal at global exhibitions, trade events, and buyer meetings — schedule a meeting in advance to discuss sourcing, documentation, and custom specifications." />
+<meta property="og:url"         content="https://www.vaibleherbal.in/resources/events" />
+<meta property="og:image"       content="https://www.vaibleherbal.in/static/images/hero/slide1.jpg" />
+<meta property="og:site_name"   content="Vaible Herbal" />
+{% endblock %}
+
+{% block content %}
+
+{# ================================================================
+   PAGE HERO
+   ================================================================ #}
+<section class="bg-brand-900 dark:bg-gray-950 text-white" aria-label="Events page header">
+  <div class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-brand-800 via-brand-900 to-gray-900 opacity-90"
+         aria-hidden="true"></div>
+    <div class="relative container-main py-16 lg:py-24">
+
+      <nav aria-label="Breadcrumb" class="mb-6">
+        <ol class="flex items-center gap-1.5 text-xs text-brand-300/80">
+          <li><a href="{{ url_for('index') }}" class="hover:text-brand-200 transition-colors">Home</a></li>
+          <li aria-hidden="true"><svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></li>
+          <li class="text-brand-200">Resources</li>
+          <li aria-hidden="true"><svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></li>
+          <li class="text-white font-medium" aria-current="page">Events</li>
+        </ol>
+      </nav>
+
+      <div class="lg:grid lg:grid-cols-3 lg:gap-12 items-start">
+        <div class="lg:col-span-2 mb-10 lg:mb-0">
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-300 mb-3">Resources</p>
+          <h1 class="font-display text-4xl sm:text-5xl font-bold leading-tight mb-5">
+            Meet us. Plan sourcing. Move faster.
+          </h1>
+          <p class="text-base sm:text-lg text-white/75 leading-relaxed mb-6">
+            Find us at global exhibitions, trade conferences, and buyer meetings.
+            Prepare your category list in advance and use our time together efficiently.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {% for tag in ['Exhibitions', 'Buyer Meetings', 'Webinars', 'Conferences'] %}
+            <span class="bg-brand-800/60 border border-brand-600/40 text-brand-200 text-xs font-semibold px-3 py-1.5 rounded-full">
+              {{ tag }}
+            </span>
+            {% endfor %}
+          </div>
+        </div>
+
+        {# Request meeting card #}
+        <div class="bg-brand-700 rounded-2xl p-6 text-white">
+          <h2 class="font-display text-lg font-bold mb-2">Request a Meeting</h2>
+          <p class="text-sm text-white/80 leading-relaxed mb-5">
+            Tell us your category interest and preferred window. We'll confirm availability
+            and set up a focused sourcing discussion.
+          </p>
+          <a href="#" class="block text-center bg-white text-brand-800 text-sm font-semibold px-4 py-2.5 rounded-lg hover:bg-brand-50 transition-colors">
+            Contact Us
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+{# ================================================================
+   FILTER BAR
+   ================================================================ #}
+<section class="bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800 py-5">
+  <div class="container-main">
+    <div class="flex flex-col sm:flex-row flex-wrap gap-3 items-start sm:items-center">
+
+      <div class="relative">
+        <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none"
+             fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M17 11A6 6 0 105 11a6 6 0 0012 0z"/>
+        </svg>
+        <input type="search" placeholder="Search events…" aria-label="Search events"
+               class="pl-9 pr-4 py-2.5 text-sm border border-gray-200 dark:border-gray-700 rounded-lg
+                      bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100
+                      placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-500 w-56"/>
+      </div>
+
+      <select aria-label="Filter by type"
+              class="text-sm border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2.5
+                     bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300
+                     focus:outline-none focus:ring-2 focus:ring-brand-500">
+        <option>All Types</option>
+        <option>Exhibition</option>
+        <option>Webinar</option>
+        <option>Conference</option>
+        <option>Buyer Meeting</option>
+      </select>
+
+      <select aria-label="Filter by region"
+              class="text-sm border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2.5
+                     bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300
+                     focus:outline-none focus:ring-2 focus:ring-brand-500">
+        <option>All Regions</option>
+        <option>India</option>
+        <option>Middle East</option>
+        <option>Europe</option>
+        <option>USA</option>
+      </select>
+
+      <select aria-label="Filter by year"
+              class="text-sm border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2.5
+                     bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300
+                     focus:outline-none focus:ring-2 focus:ring-brand-500">
+        <option>All Years</option>
+        <option>2026</option>
+        <option>2025</option>
+        <option>2024</option>
+      </select>
+
+    </div>
+  </div>
+</section>
+
+
+{# ================================================================
+   UPCOMING EVENTS
+   ================================================================ #}
+<section class="py-16 lg:py-20 bg-gray-50 dark:bg-gray-950">
+  <div class="container-main">
+
+    <div class="mb-8">
+      <p class="text-xs font-semibold uppercase tracking-widest text-brand-700 dark:text-brand-400 mb-2">On the Calendar</p>
+      <h2 class="font-display text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
+        Upcoming Events
+      </h2>
+    </div>
+
+    <div class="space-y-5">
+      {% set upcoming_events = [
+        ('18', 'FEB', '2026', 'Exhibition', 'Dubai, UAE', 'Ingredients &amp; Botanicals Showcase',
+         'An international platform for herbal ingredient buyers and suppliers. Visit our stand to review our product catalogue, request samples, and discuss custom specifications across all 14 ingredient categories.'),
+        ('05', 'MAR', '2026', 'Webinar', 'Online', 'Standardization &amp; Documentation Packs',
+         'A focused session on building standardization-aligned documentation packs — COA, TDS, MSDS, and specification sheets — for herbal extracts supplied to regulated markets.'),
+      ] %}
+      {% for day, mon, year, etype, loc, title, desc in upcoming_events %}
+      <article class="bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-6 shadow-sm flex flex-col sm:flex-row gap-5">
+        <div class="bg-brand-700 text-white rounded-xl px-4 py-3 text-center shrink-0 min-w-[72px]">
+          <span class="block text-2xl font-bold leading-none">{{ day }}</span>
+          <span class="block text-xs font-semibold uppercase mt-0.5">{{ mon }}</span>
+          <span class="block text-xs opacity-75">{{ year }}</span>
+        </div>
+        <div class="flex-1">
+          <div class="flex flex-wrap items-center gap-2 mb-2">
+            <span class="bg-brand-50 dark:bg-brand-900/30 text-brand-700 dark:text-brand-400 text-xs font-semibold px-2.5 py-1 rounded-full">{{ etype }}</span>
+            <span class="text-xs text-gray-400 flex items-center gap-1">
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+              {{ loc }}
+            </span>
+          </div>
+          <h3 class="font-semibold text-gray-900 dark:text-white text-base mb-2">{{ title }}</h3>
+          <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed mb-4">{{ desc }}</p>
+          <a href="#" class="inline-block border border-brand-700 text-brand-700 hover:bg-brand-50 dark:hover:bg-brand-900/20 px-4 py-1.5 rounded-lg text-xs font-medium transition-colors">
+            Request a Meeting
+          </a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+
+
+{# ================================================================
+   PAST EVENTS
+   ================================================================ #}
+<section class="py-16 lg:py-20 bg-white dark:bg-gray-900">
+  <div class="container-main">
+
+    <div class="mb-8">
+      <h2 class="font-display text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
+        Past Events
+      </h2>
+    </div>
+
+    <div class="space-y-5">
+      {% set past_events = [
+        ('12', 'NOV', '2025', 'Conference', 'New Delhi, India', 'Botanical Supply Chain Forum',
+         'A three-day supply chain forum for herbal ingredient manufacturers and buyers. Presented sessions on quality documentation alignment and traceability frameworks for export supply.'),
+        ('22', 'AUG', '2025', 'Buyer Meeting', 'Frankfurt, Germany', 'Private Buyer Meetings',
+         'Back-to-back private meetings with European nutraceutical and cosmetic ingredient buyers during a Frankfurt trade week. Topics covered: specification alignment, organic certification, and EU Novel Food status for selected botanicals.'),
+      ] %}
+      {% for day, mon, year, etype, loc, title, desc in past_events %}
+      <article class="bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700 p-6 opacity-80">
+        <div class="flex flex-col sm:flex-row gap-5">
+          <div class="bg-gray-400 dark:bg-gray-600 text-white rounded-xl px-4 py-3 text-center shrink-0 min-w-[72px]">
+            <span class="block text-2xl font-bold leading-none">{{ day }}</span>
+            <span class="block text-xs font-semibold uppercase mt-0.5">{{ mon }}</span>
+            <span class="block text-xs opacity-75">{{ year }}</span>
+          </div>
+          <div class="flex-1">
+            <div class="flex flex-wrap items-center gap-2 mb-2">
+              <span class="bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300 text-xs font-semibold px-2.5 py-1 rounded-full">{{ etype }}</span>
+              <span class="text-xs text-gray-400 flex items-center gap-1">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                </svg>
+                {{ loc }}
+              </span>
+            </div>
+            <h3 class="font-semibold text-gray-700 dark:text-gray-300 text-base mb-2">{{ title }}</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">{{ desc }}</p>
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+
+
+{# ================================================================
+   WHAT YOU CAN EXPECT
+   ================================================================ #}
+<section class="py-16 lg:py-20 bg-gray-50 dark:bg-gray-950">
+  <div class="container-main">
+
+    <div class="text-center mb-10">
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+        What You Can Expect
+      </h2>
+      <p class="text-gray-500 dark:text-gray-400 max-w-xl mx-auto text-sm">
+        Whether it's an exhibition stand or a private buyer meeting, every Vaible Herbal
+        interaction is prepared for productive sourcing conversations.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+      {% set expects = [
+        ('Documentation: COA / TDS / MSDS', 'Ready-to-share documentation packages for all actively supplied categories — specification sheets, test method references, and compliance statements.'),
+        ('Sampling: category-wise availability', 'Representative samples across all 14 ingredient categories, available for laboratory evaluation and formulation trials.'),
+        ('Custom specs &amp; standardization discussion', 'Our technical team can discuss custom marker compound ranges, extraction method variations, and carrier preferences on-site.'),
+        ('Export packaging &amp; lead-time planning', 'Clarity on MOQ, export packaging formats, lead times, and incoterms for your target market.'),
+      ] %}
+      {% for title, desc in expects %}
+      <div class="bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-5 shadow-sm flex gap-4">
+        <div class="w-8 h-8 bg-brand-100 dark:bg-brand-900/40 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
+          <svg class="w-4 h-4 text-brand-700 dark:text-brand-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+          </svg>
+        </div>
+        <div>
+          <h3 class="font-semibold text-gray-900 dark:text-white text-sm mb-1">{{ title }}</h3>
+          <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">{{ desc }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+
+
+{# WhatsApp float #}
+<a href="https://wa.me/919911154497?text=Hi%20Vaible%20Herbal%2C%20I%20want%20to%20enquire%20about%20your%20products."
+   target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" title="Chat on WhatsApp"
+   class="fixed bottom-6 right-5 z-50 w-14 h-14 flex items-center justify-center bg-[#25D366] hover:bg-[#1ebe57] text-white rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-200">
+  <svg class="w-7 h-7" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+    <path d="M19.11 17.39c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.14-.42-2.18-1.34-.81-.72-1.36-1.61-1.52-1.88-.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.64 1.11 2.82c.14.18 1.93 2.95 4.67 4.14.65.28 1.16.45 1.56.58.66.21 1.26.18 1.74.11.53-.08 1.61-.66 1.84-1.29.23-.63.23-1.17.16-1.29-.07-.12-.25-.2-.52-.34z"/>
+    <path d="M26.67 5.33C23.92 2.58 20.27 1.07 16.4 1.07 8.67 1.07 2.4 7.34 2.4 15.07c0 2.46.64 4.87 1.86 6.99L2.27 30.93l9.09-1.95c2.05 1.12 4.37 1.71 6.74 1.71h.01c7.73 0 14-6.27 14-14 0-3.87-1.51-7.52-4.44-10.36zM18.1 28.15h-.01c-2.1 0-4.16-.56-5.97-1.62l-.43-.25-5.39 1.16 1.14-5.25-.28-.45c-1.17-1.85-1.79-3.99-1.79-6.17 0-6.46 5.26-11.72 11.73-11.72 3.14 0 6.09 1.22 8.31 3.44 2.22 2.22 3.44 5.17 3.44 8.31 0 6.46-5.26 11.72-11.75 11.72z"/>
+  </svg>
+</a>
+
+{% endblock %}
