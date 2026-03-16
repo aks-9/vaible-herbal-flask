@@ -183,7 +183,7 @@
       <div class="flex items-center gap-2 shrink-0">
 
         <!-- Contact Us CTA (desktop) -->
-        <a href="#" class="btn-primary hidden lg:inline-flex">Contact Us</a>
+        <a href="{{ url_for('contact') }}" class="btn-primary hidden lg:inline-flex">Contact Us</a>
 
         <!-- Dark mode toggle -->
         <button id="darkToggle" type="button"
@@ -465,7 +465,7 @@
               </a>
             </li>
             <li>
-              <a href="#" class="hover:text-white transition-colors">Contact Us</a>
+              <a href="{{ url_for('contact') }}" class="hover:text-white transition-colors">Contact Us</a>
             </li>
           </ul>
         </div>

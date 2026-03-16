@@ -122,5 +122,14 @@ def brochure():
     return render_template("pages/resources/brochure.html")
 
 
+# ---------------------------------------------------------------------------
+# Contact route
+# ---------------------------------------------------------------------------
+
+@app.route("/contact")
+def contact():
+    return render_template("pages/contact.html")
+
+
 if __name__ == "__main__":
     app.run(debug=os.environ.get("DEBUG", "true").lower() == "true")
