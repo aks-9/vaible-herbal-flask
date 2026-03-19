@@ -104,7 +104,7 @@
     </div>
 
     {# 14-card grid #}
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+    <div id="catGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
       {% for cat in categories %}
       <a href="{{ url_for('product_detail', slug=cat.slug) }}"
          aria-label="{{ cat.name }} — {{ cat.count }} products"
