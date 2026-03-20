@@ -541,5 +541,100 @@
 
   {% block scripts %}{% endblock %}
 
+  <!-- =====================================================
+       CHAT WIDGET
+       ===================================================== -->
+  <div id="chatWidget" class="fixed bottom-24 right-5 z-50 flex flex-col items-end gap-3">
+
+    {# Chat panel #}
+    <div id="chatPanel"
+         class="hidden w-80 sm:w-[360px] bg-white dark:bg-gray-800
+                rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700
+                flex flex-col overflow-hidden"
+         style="height: 480px;"
+         role="dialog"
+         aria-label="Vaible Herbal chat assistant">
+
+      {# Header #}
+      <div class="bg-brand-800 text-white px-4 py-3 flex items-center gap-3 shrink-0">
+        <div class="w-8 h-8 rounded-full bg-brand-600 flex items-center justify-center shrink-0">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2"
+               viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0
+                     012 2v8a2 2 0 01-2 2h-5l-5 3v-3z" />
+          </svg>
+        </div>
+        <div class="flex-1 min-w-0">
+          <p class="text-sm font-semibold leading-tight">Vaible Herbal Assistant</p>
+          <p class="text-xs text-brand-300 leading-tight">Ask about products &amp; docs</p>
+        </div>
+      </div>
+
+      {# Messages #}
+      <div id="chatMessages"
+           class="flex-1 overflow-y-auto p-4 space-y-3 scroll-smooth">
+        {# Welcome message #}
+        <div class="flex justify-start">
+          <div class="max-w-[85%] bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-100
+                      text-sm rounded-2xl rounded-bl-sm px-4 py-2.5">
+            Hi! I'm the Vaible Herbal assistant. Ask me about our products, documentation, or how to get in touch.
+          </div>
+        </div>
+      </div>
+
+      {# Input bar #}
+      <div class="border-t border-gray-200 dark:border-gray-700 p-3 flex gap-2 shrink-0">
+        <input id="chatInput"
+               type="text"
+               placeholder="Ask a question…"
+               maxlength="500"
+               autocomplete="off"
+               class="flex-1 text-sm border border-gray-300 dark:border-gray-600
+                      dark:bg-gray-700 dark:text-white
+                      rounded-lg px-3 py-2
+                      focus:outline-none focus:ring-2 focus:ring-brand-500
+                      placeholder-gray-400 dark:placeholder-gray-500" />
+        <button id="chatSend"
+                type="button"
+                aria-label="Send message"
+                class="shrink-0 w-9 h-9 flex items-center justify-center
+                       bg-brand-700 hover:bg-brand-600 disabled:opacity-50
+                       text-white rounded-lg transition-colors duration-150">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5"
+               viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    {# Toggle button #}
+    <button id="chatToggle"
+            type="button"
+            aria-label="Open chat assistant"
+            class="w-14 h-14 flex items-center justify-center
+                   bg-brand-700 hover:bg-brand-600 text-white
+                   rounded-full shadow-lg hover:shadow-xl hover:scale-110
+                   transition-all duration-200">
+      {# Open icon #}
+      <svg id="chatIconOpen" class="w-6 h-6" fill="none" stroke="currentColor"
+           stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round"
+              d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0
+                 012 2v8a2 2 0 01-2 2h-5l-5 3v-3z" />
+      </svg>
+      {# Close icon #}
+      <svg id="chatIconClose" class="w-6 h-6 hidden" fill="none" stroke="currentColor"
+           stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+
+  </div>
+
+  <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+
 </body>
 </html>

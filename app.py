@@ -1,4 +1,4 @@
-from flask import Flask, render_template, abort
+from flask import Flask, render_template, abort, request, jsonify
 from dotenv import load_dotenv
 import os
 from datetime import date
@@ -313,6 +313,102 @@ def sitemap_xml():
 
     xml_parts.append("</urlset>")
     return "\n".join(xml_parts), 200, {"Content-Type": "application/xml; charset=utf-8"}
+
+
+# ---------------------------------------------------------------------------
+# Chatbot
+# ---------------------------------------------------------------------------
+
+_CHAT_SYSTEM_PROMPT = """
+You are a helpful sales assistant for Vaible Herbal, a B2B herbal ingredients
+manufacturer and exporter based in New Delhi, India.
+
+About Vaible Herbal:
+- 30+ years of experience in herbal ingredient manufacturing
+- Exports to 26+ countries with 650+ trusted global clients
+- 600+ active product SKUs across 14 categories
+- Full documentation support: COA, MSDS, specification sheets on request
+- Non-thermal decontamination, sterile filtration, in-house analytical lab
+
+Product categories:
+1. Herbal Dry Extracts (100+ items)
+2. Herbal Liquid Extracts (70+ items)
+3. Herbal Oil Extracts
+4. Essential Oils (85+ items)
+5. Carrier Oils (60+ items)
+6. Herbal Powders (120+ items)
+7. Butters
+8. Ayurvedic Oils
+9. Crystals
+10. Floral Waters
+11. Granules
+12. Resin
+13. Oleoresins
+14. Soft Extracts
+
+Contact:
+- Email: Sales@VaibleHerbal.com
+- Phone / WhatsApp: +91-9911154497
+- Website: www.vaibleherbal.in
+
+Guidelines:
+- Be concise and professional (2–4 sentences unless more detail is needed)
+- For specific pricing, MOQ, or custom specs, direct users to the sales team
+- For documentation requests (COA/MSDS), direct to email or WhatsApp
+- Never invent specific prices, quantities, or botanical claims
+- If unsure, say so and direct to Sales@VaibleHerbal.com
+""".strip()
+
+
+@app.route("/chat", methods=["POST"])
+def chat():
+    try:
+        from google import genai as _genai
+        from google.genai import types as _types
+    except ImportError:
+        return jsonify({"reply": "Chatbot unavailable. Please email Sales@VaibleHerbal.com."}), 503
+
+    data = request.get_json(silent=True) or {}
+    user_message = (data.get("message") or "").strip()[:500]
+    raw_history  = data.get("history") or []
+
+    if not user_message:
+        return jsonify({"reply": "Please type a message."}), 400
+
+    api_key = os.environ.get("GEMINI_API_KEY")
+    if not api_key:
+        return jsonify({"reply": "Chatbot is not configured. Please email Sales@VaibleHerbal.com."}), 503
+
+    # Build contents list: prior history + current user message
+    contents = []
+    for h in raw_history[-10:]:
+        role = str(h.get("role", ""))
+        text = str(h.get("parts", ""))
+        if role in ("user", "model") and text:
+            contents.append(_types.Content(
+                role=role,
+                parts=[_types.Part.from_text(text=text)],
+            ))
+    contents.append(_types.Content(
+        role="user",
+        parts=[_types.Part.from_text(text=user_message)],
+    ))
+
+    try:
+        client = _genai.Client(api_key=api_key)
+        response = client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=contents,
+            config=_types.GenerateContentConfig(
+                system_instruction=_CHAT_SYSTEM_PROMPT,
+                max_output_tokens=512,
+            ),
+        )
+        return jsonify({"reply": response.text})
+    except Exception:
+        return jsonify({
+            "reply": "I'm having trouble right now. Please email Sales@VaibleHerbal.com or WhatsApp +91-9911154497."
+        }), 200
 
 
 # ---------------------------------------------------------------------------
