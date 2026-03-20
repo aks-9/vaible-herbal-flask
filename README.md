@@ -136,7 +136,8 @@ vaible-herbal-flask/
 - [x] Phase 8 — Resources section
 - [x] Phase 9 — Contact + form handling
 - [x] Phase 10 — SEO & meta tags
-- [x] GSAP animations
-- [x] Gemini AI chatbot
-- [x] World map (homepage)
-- [x] Phase 11 — Deployment (PythonAnywhere)
+- [x] Phase 11 — Enhancements
+  - [x] GSAP animations
+  - [x] Gemini AI chatbot
+  - [x] World map (homepage)
+- [ ] Phase 12 — Deployment (PythonAnywhere)
