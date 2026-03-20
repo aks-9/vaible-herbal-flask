@@ -8,13 +8,19 @@ Covers the full company: products catalogue, about, innovation, resources, and c
 - **Backend:** Python 3.12+ / Flask 3.1
 - **Frontend:** Tailwind CSS v3, vanilla JS (no jQuery, no framework)
 - **Templating:** Jinja2
-- **Deployment:** Render / Railway (WSGI via Gunicorn)
+- **Animations:** GSAP 3 + ScrollTrigger
+- **Chatbot:** Google Gemini API (`gemini-2.5-flash`) via `google-genai`
+- **Maps:** jsvectormap (world map, CDN)
+- **Deployment:** PythonAnywhere (WSGI via `wsgi.py`)
 
 ## Features
 
 - 14-category product catalogue with 700+ SKUs, search, filter, and modal detail view
 - Hero slider, dark mode (persisted via `localStorage`), mobile drawer navigation
 - About, Innovation, Resources, and Contact sections — 20+ pages
+- **World map** — highlights 26+ export countries on the homepage
+- **AI chatbot** — Gemini-powered floating widget, trained on Vaible Herbal's products and contact info
+- **GSAP animations** — hero entrance, stats count-up, scroll-triggered card stagger and fade-ins
 - SEO: per-page meta/OG tags, JSON-LD (Organization + BreadcrumbList), `robots.txt`, `sitemap.xml`
 - Custom 404 page
 - 489 pytest tests across 7 test modules
@@ -36,13 +42,19 @@ pip install -r requirements.txt
 
 # 4. Set up environment variables
 cp .env.example .env
-# Edit .env with your values
+# Edit .env — set SECRET_KEY and GEMINI_API_KEY
 
 # 5. Run the development server
 python app.py
 ```
 
 Visit `http://localhost:5000`
+
+### Gemini API Key
+
+The chatbot requires a free Gemini API key:
+1. Go to [aistudio.google.com](https://aistudio.google.com) → Get API key
+2. Add `GEMINI_API_KEY=your-key` to your `.env` file
 
 ## Build CSS (if you change templates or input.css)
 
@@ -61,15 +73,16 @@ python -m pytest tests/ -v
 
 ```
 vaible-herbal-flask/
-├── app.py                      # Flask routes, sitemap, robots.txt, 404 handler
+├── app.py                      # Flask routes, chatbot, sitemap, robots.txt, 404 handler
+├── wsgi.py                     # WSGI entry point for PythonAnywhere
 ├── data/
 │   ├── products.py             # 14 product categories (slug, name, meta, etc.)
 │   ├── product_items.py        # 700+ product items across all categories
 │   └── blog_posts.py           # 8 blog posts for News & Blogs page
 ├── templates/
-│   ├── base.html               # Shared layout (navbar, footer, dark mode, SEO defaults)
+│   ├── base.html               # Shared layout (navbar, footer, dark mode, chatbot widget)
 │   ├── 404.html                # Custom 404 page
-│   ├── index.html              # Homepage (hero slider, stats, product teaser)
+│   ├── index.html              # Homepage (hero, stats, company intro, world map, products)
 │   └── pages/
 │       ├── products.html       # Full product catalogue
 │       ├── product_detail.html # Category detail with search/filter/modal
@@ -87,6 +100,9 @@ vaible-herbal-flask/
 │   ├── js/
 │   │   ├── nav.js              # Dropdowns, mobile drawer, dark mode toggle
 │   │   ├── home.js             # Hero slider
+│   │   ├── animations.js       # GSAP scroll animations (global)
+│   │   ├── chat.js             # Gemini chatbot widget
+│   │   ├── world-map.js        # jsvectormap world map (homepage)
 │   │   ├── product-detail.js   # Search/filter/sort + XSS-safe modal
 │   │   └── news-blogs.js       # Blog search/filter/sort + modal
 │   └── images/
@@ -120,4 +136,7 @@ vaible-herbal-flask/
 - [x] Phase 8 — Resources section
 - [x] Phase 9 — Contact + form handling
 - [x] Phase 10 — SEO & meta tags
-- [ ] Phase 11 — Deployment
+- [x] Phase 11 — Deployment (PythonAnywhere)
+- [x] GSAP animations
+- [x] Gemini AI chatbot
+- [x] World map (homepage)
